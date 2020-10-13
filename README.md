@@ -23,7 +23,7 @@ also header have to :
 > <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     
-and add tools:replace="label"
+and add tools:replace="label" , requestLegacyExternalStorage only set when sdkCompile is > 29 
   >  < application
          android:requestLegacyExternalStorage="true"
         tools:replace="label">
