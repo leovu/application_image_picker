@@ -4,10 +4,11 @@ A new flutter plugin project.
 
 ## Getting Started
 
-In Android: 
+**In Android: **
+
 Need to add permision in your Manifest:
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CAMERA" />
+  >  <uses-permission android:name="android.permission.INTERNET" />
+  >  <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
@@ -28,7 +29,7 @@ and add tools:replace="label"
         tools:replace="label">
 
 
-In iOS:
+** In iOS: **
 
 Add the following keys to your Info.plist file, located in <project root>/ios/Runner/Info.plist:
   NSPhotoLibraryUsageDescription
