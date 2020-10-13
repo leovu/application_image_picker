@@ -20,11 +20,11 @@ Need to add permision in your Manifest:
     <uses-feature android:name="android.hardware.camera.autofocus" />
     
 also header have to : 
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+> <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     
 and add tools:replace="label"
-<application
+> <application
         android:requestLegacyExternalStorage="true"
         tools:replace="label">
 
