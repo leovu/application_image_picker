@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8869401b-e120-4d29-8869-f67246b2810a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/application_location_request.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application_image_picker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/application_image_picker.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -20,14 +26,56 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="R58MA5K7J5F" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="ce081718c38bc824037e" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="975">
-              <caret line="65" column="46" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="46" />
+            <state relative-caret-position="445">
+              <caret line="66" column="53" selection-start-line="66" selection-start-column="53" selection-end-line="66" selection-end-column="53" />
+              <folding>
+                <element signature="e#0#17#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/application_location_request.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-189">
+              <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/application_image_picker.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="20" selection-start-column="20" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/camera/custom_camera.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="760">
+              <caret line="170" column="32" selection-start-line="170" selection-start-column="32" selection-end-line="170" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#20#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/application_platform.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="53" selection-start-line="1" selection-start-column="53" selection-end-line="1" selection-end-column="53" />
               <folding>
                 <element signature="e#0#17#0" expanded="true" />
               </folding>
@@ -36,22 +84,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/application_image_picker.dart">
+        <entry file="file://$PROJECT_DIR$/lib/constant.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="20" column="26" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#20#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="15">
+              <caret line="1" column="35" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pubspec.yaml">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/android/src/main/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="29" column="52" lean-forward="true" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
+            <state relative-caret-position="105">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -92,34 +137,36 @@
         <option value="$PROJECT_DIR$/lib/application_platform.dart" />
         <option value="$PROJECT_DIR$/lib/hex_color.dart" />
         <option value="$PROJECT_DIR$/lib/dialog.dart" />
-        <option value="$PROJECT_DIR$/android/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/../.pub-cache/hosted/pub.dartlang.org/camera-0.5.8+8/android/build.gradle" />
         <option value="$PROJECT_DIR$/lib/progress_dialog.dart" />
         <option value="$PROJECT_DIR$/lib/custom_alert_dialog.dart" />
         <option value="$PROJECT_DIR$/lib/camera/custom_camera.dart" />
         <option value="$PROJECT_DIR$/lib/constant.dart" />
         <option value="$PROJECT_DIR$/test/application_image_picker_test.dart" />
-        <option value="$PROJECT_DIR$/example/lib/main.dart" />
         <option value="$PROJECT_DIR$/pubspec.yaml" />
         <option value="$PROJECT_DIR$/android/src/main/kotlin/wao/flutter/application/project/application_image_picker/ApplicationImagePickerPlugin.kt" />
         <option value="$PROJECT_DIR$/lib/permission_request.dart" />
         <option value="$PROJECT_DIR$/lib/image_picker.dart" />
         <option value="$PROJECT_DIR$/lib/application_image_picker.dart" />
+        <option value="$PROJECT_DIR$/lib/camera/application_location_request.dart" />
+        <option value="$USER_HOME$/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/camera-0.5.8+8/android/build.gradle" />
+        <option value="$PROJECT_DIR$/android/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/example/lib/main.dart" />
+        <option value="$PROJECT_DIR$/lib/application_location_request.dart" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1366" />
-    <option name="y" value="-9" />
-    <option name="width" value="1280" />
-    <option name="height" value="777" />
+    <option name="y" value="23" />
+    <option name="width" value="1680" />
+    <option name="height" value="960" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -130,36 +177,12 @@
             <path>
               <item name="application_image_picker" type="b2602c69:ProjectViewProjectNode" />
               <item name="application_image_picker" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="application_image_picker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="application_image_picker" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
               <item name="android" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="application_image_picker" type="b2602c69:ProjectViewProjectNode" />
               <item name="application_image_picker" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
               <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="application_image_picker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="application_image_picker" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="application_image_picker" type="b2602c69:ProjectViewProjectNode" />
-              <item name="application_image_picker" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-              <item name="android" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -169,14 +192,74 @@
             </path>
             <path>
               <item name="application_image_picker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="application_image_picker" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="camera" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="application_image_picker" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="application_image_picker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Flutter Plugins" type="70bed36:NamedLibraryElementNode" />
+            </path>
+            <path>
+              <item name="application_image_picker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Flutter Plugins" type="70bed36:NamedLibraryElementNode" />
+              <item name="application_image_picker" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="application_image_picker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Flutter Plugins" type="70bed36:NamedLibraryElementNode" />
+              <item name="application_image_picker" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="application_image_picker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Flutter Plugins" type="70bed36:NamedLibraryElementNode" />
+              <item name="application_image_picker" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="application_image_picker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Flutter Plugins" type="70bed36:NamedLibraryElementNode" />
+              <item name="application_image_picker" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="application_image_picker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Flutter Plugins" type="70bed36:NamedLibraryElementNode" />
+              <item name="application_image_picker" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="camera" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="application_image_picker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Flutter Plugins" type="70bed36:NamedLibraryElementNode" />
+              <item name="camera-0.5.8+8" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="application_image_picker" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="Flutter Plugins" type="70bed36:NamedLibraryElementNode" />
+              <item name="camera-0.5.8+8" type="462c0819:PsiDirectoryNode" />
+              <item name="android" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="AndroidView" />
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -184,7 +267,13 @@
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="dart.settings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -212,10 +301,9 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1366" y="-9" width="1280" height="777" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1680" height="960" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24959612" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2045177" />
       <window_info id="Captures" order="1" side_tool="true" />
       <window_info id="Structure" order="2" side_tool="true" />
       <window_info id="Image Layers" order="3" />
@@ -224,16 +312,16 @@
       <window_info id="Resources Explorer" order="6" weight="0.32956383" />
       <window_info id="Capture Tool" order="7" />
       <window_info id="Favorites" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Dart Analysis" order="0" weight="0.32846716" />
-      <window_info anchor="bottom" id="Run" order="1" weight="0.55474454" />
+      <window_info anchor="bottom" id="Dart Analysis" order="0" weight="0.32781065" />
+      <window_info active="true" anchor="bottom" id="Run" order="1" visible="true" weight="0.28402367" />
       <window_info anchor="bottom" id="TODO" order="2" />
       <window_info anchor="bottom" id="Android Profiler" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Logcat" order="4" />
       <window_info anchor="bottom" id="Debug" order="5" />
-      <window_info anchor="bottom" id="Terminal" order="6" weight="0.329927" />
+      <window_info anchor="bottom" id="Terminal" order="6" weight="0.3289941" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Messages" order="9" weight="0.329927" />
+      <window_info anchor="bottom" id="Messages" order="9" visible="true" weight="0.12828948" />
       <window_info anchor="bottom" id="Find" order="10" />
       <window_info anchor="right" id="Device File Explorer" order="0" side_tool="true" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
@@ -246,9 +334,6 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../.pub-cache/git/android_gallery_picker-e64b4e2dc6c310056d802e072cdc89e2acc8607a/lib/android_gallery_picker.dart" />
-    <entry file="file://$PROJECT_DIR$/example/android/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/../.pub-cache/git/android_gallery_picker-e64b4e2dc6c310056d802e072cdc89e2acc8607a/android/src/main/kotlin/wao/flutter/application/project/android_gallery_picker/GalleryActivity.java" />
     <entry file="file://$PROJECT_DIR$/../.pub-cache/git/android_gallery_picker-8ef31ac35340f90a412e6b5f599b54419afd2c92/android/src/main/kotlin/wao/flutter/application/project/android_gallery_picker/GalleryActivity.java" />
     <entry file="file://$PROJECT_DIR$/../.pub-cache/git/android_gallery_picker-24f3e95f734b1e1bdc0ac3fad5c533142baa119c/android/src/main/kotlin/wao/flutter/application/project/android_gallery_picker/GalleryActivity.java" />
@@ -263,16 +348,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/application_platform.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="53" selection-start-line="1" selection-start-column="53" selection-end-line="1" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -314,25 +389,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../packages/flutter/lib/src/services/asset_bundle.dart" />
     <entry file="file://$PROJECT_DIR$/../packages/flutter/lib/src/painting/image_provider.dart" />
-    <entry file="file://$PROJECT_DIR$/lib/camera/custom_camera.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2550">
-          <caret line="170" column="32" lean-forward="true" selection-start-line="170" selection-start-column="32" selection-end-line="170" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/application_image_picker_test.dart">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/constant.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="35" lean-forward="true" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../.pub-cache/git/android_gallery_picker-4050948e0941393beed8f610c8f0afacbfe0d021/android/src/main/kotlin/wao/flutter/application/project/android_gallery_picker/AndroidGalleryPickerPlugin.kt" />
     <entry file="file://$PROJECT_DIR$/../.pub-cache/git/android_gallery_picker-c2f3aa5aec8b20b6d20533180587f2c6acb26a07/android/src/main/kotlin/wao/flutter/application/project/android_gallery_picker/GalleryActivity.java" />
@@ -345,10 +403,31 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../.pub-cache/hosted/pub.dartlang.org/permission_handler-5.0.1+1/lib/permission_handler.dart" />
+    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/flutter/bin/cache/pkg/sky_engine/lib/async/future.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="147" column="15" selection-start-line="147" selection-start-column="15" selection-end-line="147" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/flutter/.pub-cache/hosted/pub.dartlang.org/camera-0.5.8+8/android/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="24" selection-start-line="32" selection-start-column="24" selection-end-line="32" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/permission_request.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="27" column="30" selection-start-line="27" selection-start-column="30" selection-end-line="27" selection-end-column="30" />
+        <state relative-caret-position="780">
+          <caret line="52" column="69" selection-start-line="52" selection-start-column="69" selection-end-line="52" selection-end-column="69" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
           </folding>
@@ -357,52 +436,89 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/image_picker.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="852">
-          <caret line="144" column="22" lean-forward="true" selection-start-line="144" selection-start-column="22" selection-end-line="144" selection-end-column="22" />
+        <state relative-caret-position="210">
+          <caret line="113" selection-start-line="113" selection-end-line="154" selection-end-column="3" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/android/app/src/debug/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/example/android/app/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="60" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
+        <state relative-caret-position="510">
+          <caret line="34" column="58" selection-start-line="33" selection-start-column="22" selection-end-line="34" selection-end-column="58" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
+    <entry file="file://$PROJECT_DIR$/example/android/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/android/app/src/profile/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="975">
-          <caret line="65" column="46" selection-start-line="65" selection-start-column="46" selection-end-line="65" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="105">
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/android/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="9" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="9" />
+        <state relative-caret-position="105">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/application_image_picker.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="20" column="26" lean-forward="true" selection-start-line="20" selection-start-column="26" selection-end-line="20" selection-end-column="26" />
+        <state>
+          <caret column="20" selection-start-column="20" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/camera/custom_camera.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="170" column="32" selection-start-line="170" selection-start-column="32" selection-end-line="170" selection-end-column="32" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
+    <entry file="file://$PROJECT_DIR$/lib/application_platform.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="29" column="52" lean-forward="true" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
+        <state relative-caret-position="15">
+          <caret line="1" column="53" selection-start-line="1" selection-start-column="53" selection-end-line="1" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/constant.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="35" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/lib/main.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="66" column="53" selection-start-line="66" selection-start-column="53" selection-end-line="66" selection-end-column="53" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/application_location_request.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-189">
+          <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
         </state>
       </provider>
     </entry>
