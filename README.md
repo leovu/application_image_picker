@@ -26,7 +26,7 @@ also header have to :
 and add tools:replace="label"
   >  < application
          android:requestLegacyExternalStorage="true"
-      >   tools:replace="label">
+        tools:replace="label">
 
 
 ** In iOS: **
