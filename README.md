@@ -24,8 +24,8 @@ also header have to :
     xmlns:tools="http://schemas.android.com/tools"
     
 and add tools:replace="label"
-  > <application
-    >     android:requestLegacyExternalStorage="true"
+  >  < application
+         android:requestLegacyExternalStorage="true"
       >   tools:replace="label">
 
 
