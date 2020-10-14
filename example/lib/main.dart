@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:application_image_picker/application_image_picker.dart';
-import 'package:application_image_picker/application_location_request.dart';
 import 'package:application_image_picker/dialog.dart';
+import 'package:application_image_picker/permission_handler.dart';
 import 'package:flutter/material.dart';
 
 void main() {
