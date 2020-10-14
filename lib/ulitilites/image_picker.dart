@@ -1,9 +1,9 @@
 import 'dart:io';
 import 'package:application_image_picker/application_platform.dart';
 import 'package:application_image_picker/camera/custom_camera.dart';
-import 'package:application_image_picker/constant.dart';
-import 'package:application_image_picker/dialog.dart';
-import 'package:application_image_picker/permission_request.dart';
+import 'package:application_image_picker/ulitilites/constant.dart';
+import 'package:application_image_picker/ulitilites/dialog.dart';
+import 'package:application_image_picker/ulitilites/permission_request.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

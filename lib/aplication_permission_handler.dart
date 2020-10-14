@@ -4,33 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:permission_handler/permission_handler.dart';
 
-import 'permission_request.dart';
+import 'ulitilites/permission_request.dart';
 
-class RePermissionHandler {
-  static Future<bool> handleCameraPermission(BuildContext context) async {
-    bool check = await requestPermission(context, PermissionRequestType.CAMERA);
-    if(check != null) return check;
-    return null;
-  }
-
-  static Future<bool> handleLocationPermission(BuildContext context) async {
-    bool check = await requestPermission(context, PermissionRequestType.LOCATION);
-    if(check != null) return check;
-    return null;
-  }
-
-  static Future<bool> handleMicroPhonePermission(BuildContext context) async {
-    bool check = await requestPermission(context, PermissionRequestType.RECORD_AUDIO);
-    if(check != null) return check;
-    return null;
-  }
-
-  static Future<bool> handleStoragePermission(BuildContext context) async {
-    bool check = await requestPermission(context, PermissionRequestType.STORAGE);
-    if(check != null) return check;
-    return null;
-  }
-
+class RetroPermissionHandler {
   static Future<bool> requestPermission(BuildContext context, PermissionRequestType type) async {
     if (Platform.isAndroid) {
       if (await Permission.location.isPermanentlyDenied) {
@@ -90,7 +66,7 @@ class RePermissionHandler {
         break;
       case  PermissionRequestType.STORAGE:
         if(isIOS){
-          PermissionStatus permission = await Permission.storage.status;
+          PermissionStatus permission = await Permission.photos.status;
           return permission;
         } else {
           PermissionStatus permission = await Permission.storage.status;

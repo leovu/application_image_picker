@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:application_image_picker/constant.dart';
-import 'package:application_image_picker/dialog.dart';
-import 'package:application_image_picker/hex_color.dart';
-import 'package:application_image_picker/image_picker.dart';
+import 'package:application_image_picker/ulitilites/constant.dart';
+import 'package:application_image_picker/ulitilites/dialog.dart';
+import 'package:application_image_picker/ulitilites/hex_color.dart';
+import 'package:application_image_picker/ulitilites/image_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 

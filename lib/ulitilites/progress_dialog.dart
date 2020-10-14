@@ -1,8 +1,173 @@
-import 'package:application_image_picker/constant.dart';
-import 'package:application_image_picker/dialog.dart';
-import 'package:application_image_picker/hex_color.dart';
-import 'package:flutter/cupertino.dart';
+library progress_dialog;
+
+import 'package:application_image_picker/application_platform.dart';
+import 'package:application_image_picker/ulitilites/constant.dart';
+import 'package:application_image_picker/ulitilites/dialog.dart';
+import 'package:application_image_picker/ulitilites/hex_color.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:keyboard_actions/keyboard_actions.dart';
+
+class ProgressDialog {
+  bool _isShowing = false;
+
+  BuildContext buildContext;
+
+  ProgressDialog(this.buildContext);
+
+  show() {
+    _showDialog();
+    _isShowing = true;
+  }
+
+  bool isShowing() {
+    return _isShowing;
+  }
+
+  hide() {
+    _isShowing = false;
+    CustomNavigator().pop(buildContext);
+  }
+
+  _showDialog() {
+    showDialog(
+      barrierDismissible: false,
+      context: buildContext,
+      builder: (BuildContext context) {
+        return WillPopScope(
+          child: Scaffold(
+            backgroundColor: Colors.black.withOpacity(0.3),
+            body: Container(
+              height: MediaQuery.of(context).size.height,
+              child: Center(
+                child: ApplicationPlatform.isIOS
+                    ? CupertinoActivityIndicator()
+                    : CircularProgressIndicator(),
+              ),
+            ),
+          ),
+          onWillPop: () async => false,
+        );
+      },
+    );
+  }
+}
+
+class CustomDialog extends StatelessWidget {
+  final Widget screen;
+  final bool bottom;
+  final bool cancelable;
+  final List<KeyboardActionsItem> actions;
+
+  CustomDialog(
+      {@required this.screen,
+      this.bottom = false,
+      this.cancelable = true,
+      this.actions})
+      : assert(screen != null && cancelable != null);
+
+  @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return CustomKeyboardForm(
+      backgroundColor: Colors.black.withOpacity(0.3),
+      body: SingleChildScrollView(
+        child: Container(
+          height: MediaQuery.of(context).size.height,
+          child: Stack(
+            fit: StackFit.expand,
+            children: <Widget>[
+              GestureDetector(
+                onTap: cancelable ? () => CustomNavigator().pop(context) : null,
+              ),
+              Column(
+                mainAxisAlignment:
+                    bottom ? MainAxisAlignment.end : MainAxisAlignment.center,
+                children: <Widget>[
+                  Container(
+                    width: MediaQuery.of(context).size.width,
+                    margin: EdgeInsets.symmetric(horizontal: 20),
+                    child: screen,
+                  )
+                ],
+              )
+            ],
+          ),
+        ),
+      ),
+      actions: actions ?? [],
+    );
+  }
+}
+
+class CustomPopupDialog extends StatelessWidget {
+  final Widget child;
+  final bool isExpanded;
+
+  CustomPopupDialog({@required this.child, this.isExpanded = false});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      child: isExpanded
+          ? Container(
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(Radius.circular(20.0))),
+              height: MediaQuery.of(context).size.height * 0.5,
+              child: child,
+            )
+          : Container(
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(Radius.circular(20.0))),
+              child: child,
+            ),
+      onTap: () => hideKeyboard(context),
+    );
+  }
+}
+
+hideKeyboard(BuildContext context) {
+  FocusScope.of(context).unfocus();
+}
+
+class CustomKeyboardForm extends StatelessWidget {
+  final Widget body;
+  final List<KeyboardActionsItem> actions;
+  final Color backgroundColor;
+
+  CustomKeyboardForm(
+      {@required this.body, @required this.actions, this.backgroundColor})
+      : assert(body != null && actions != null);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        backgroundColor: backgroundColor ?? Colors.white,
+        body: ApplicationPlatform.isAndroid
+            ? Container(
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height,
+                child: body,
+              )
+            : KeyboardActions(
+                config: configKeyboardActions(actions),
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  child: body,
+                ),
+              ));
+  }
+}
+
+configKeyboardActions(List<KeyboardActionsItem> actions) {
+  return KeyboardActionsConfig(
+      keyboardActionsPlatform: KeyboardActionsPlatform.IOS,
+      keyboardBarColor: Colors.grey[200],
+      actions: actions);
+}
 
 class CustomAlertDialog extends StatelessWidget {
   final Color color;
@@ -91,8 +256,7 @@ class CustomAlertDialog extends StatelessWidget {
                                           Icons.email,
                                           size: 20,
                                           color: Colors.white,
-                                        )
-                                  ),
+                                        )),
                             ),
                             Container(
                               width: maxPadding,
@@ -154,7 +318,9 @@ class CustomAlertDialog extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: options == null
                               ? [
-                                  _buildButton(Common.stringConfirm, color ?? Colors.blue,
+                                  _buildButton(
+                                      Common.stringConfirm,
+                                      color ?? Colors.blue,
                                       () => CustomNavigator().pop(context))
                                 ]
                               : options

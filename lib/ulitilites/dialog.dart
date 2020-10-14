@@ -1,6 +1,6 @@
-import 'package:application_image_picker/constant.dart';
-import 'package:application_image_picker/hex_color.dart';
-import 'package:application_image_picker/progress_dialog.dart';
+import 'package:application_image_picker/ulitilites/constant.dart';
+import 'package:application_image_picker/ulitilites/hex_color.dart';
+import 'package:application_image_picker/ulitilites/progress_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:keyboard_actions/keyboard_actions.dart';
 

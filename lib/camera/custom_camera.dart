@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'dart:io';
-import 'package:application_image_picker/dialog.dart';
+import 'package:application_image_picker/ulitilites/dialog.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
