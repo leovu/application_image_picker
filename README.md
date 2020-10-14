@@ -35,3 +35,20 @@ Add the following keys to your Info.plist file, located in <project root>/ios/Ru
   NSPhotoLibraryUsageDescription
   NSCameraUsageDescription
   NSMicrophoneUsageDescription
+
+
+
+Example:
+
+- ImagePicker :
+    File tempImage = await RetroImagePicker.openPictureSelection(
+                    context,
+                    appBarColor: "#FF0000",
+                    titleAppBar: "Gallery");
+
+- Permission:
+    bool status = await RetroPermissionHandler.request(PermissionRequestType.CAMERA);
+    bool status = await RetroPermissionHandler.check(PermissionRequestType.CAMERA);
+
+- Check Platform
+    bool isWeb = ApplicationPlatform.isWeb;

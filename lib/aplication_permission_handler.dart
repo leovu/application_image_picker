@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:io';
+import 'package:application_image_picker/application_platform.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -7,17 +8,17 @@ import 'package:permission_handler/permission_handler.dart';
 import 'ulitilites/permission_request.dart';
 
 class RetroPermissionHandler {
-  static Future<bool> requestPermission(BuildContext context, PermissionRequestType type) async {
+  static Future<bool> requestPermission(PermissionRequestType type) async {
     if (Platform.isAndroid) {
       if (await Permission.location.isPermanentlyDenied) {
         await openAppSettings();
-        PermissionStatus permission = await checkPermission(type);
+        PermissionStatus permission = await _checkPermission(type);
         if (permission == PermissionStatus.granted) {
           return true;
         }
         return false;
       } else {
-        PermissionStatus permission = await checkPermission(type);
+        PermissionStatus permission = await _checkPermission(type);
         if (permission == PermissionStatus.granted) {
           return true;
         } else {
@@ -25,7 +26,7 @@ class RetroPermissionHandler {
         }
       }
     } else {
-      PermissionStatus permission = await checkPermission(type);
+      PermissionStatus permission = await _checkPermission(type);
       if (permission == PermissionStatus.granted) {
         return true;
       } else if (permission == PermissionStatus.restricted ||
@@ -36,11 +37,11 @@ class RetroPermissionHandler {
         }
         return false;
       } else {
-        PermissionStatus permission = await checkPermission(type);
+        PermissionStatus permission = await _checkPermission(type);
         if (permission == PermissionStatus.granted) {
           return true;
         } else {
-          PermissionStatus permission = await checkPermission(type);
+          PermissionStatus permission = await _checkPermission(type);
           if (permission == PermissionStatus.granted) {
             return true;
           }
@@ -50,22 +51,67 @@ class RetroPermissionHandler {
     }
   }
 
-  static Future<PermissionStatus> checkPermission(PermissionRequestType type, {bool isIOS = false}) async {
-    switch (type){
-      case  PermissionRequestType.CAMERA:
+  static Future<bool> checkPermission(PermissionRequestType type) async {
+    switch (type) {
+      case PermissionRequestType.CAMERA:
+        PermissionStatus permission = await Permission.camera.status;
+        if (permission == PermissionStatus.granted) {
+          return true;
+        }
+        return false;
+        break;
+      case PermissionRequestType.LOCATION:
+        PermissionStatus permission = await Permission.location.status;
+        if (permission == PermissionStatus.granted) {
+          return true;
+        }
+        return false;
+        break;
+      case PermissionRequestType.RECORD_AUDIO:
+        PermissionStatus permission = await Permission.microphone.status;
+        if (permission == PermissionStatus.granted) {
+          return true;
+        }
+        return false;
+        break;
+      case PermissionRequestType.STORAGE:
+        if (Platform.isIOS) {
+          PermissionStatus permission = await Permission.photos.status;
+          if (permission == PermissionStatus.granted) {
+            return true;
+          }
+          return false;
+        } else {
+          PermissionStatus permission = await Permission.storage.status;
+          if (permission == PermissionStatus.granted) {
+            return true;
+          }
+          return false;
+        }
+        break;
+      default:
+        return false;
+        break;
+    }
+  }
+
+  static Future<PermissionStatus> _checkPermission(
+      PermissionRequestType type) async {
+    switch (type) {
+      case PermissionRequestType.CAMERA:
         PermissionStatus permission = await Permission.camera.status;
         return permission;
         break;
-      case  PermissionRequestType.LOCATION:
+      case PermissionRequestType.LOCATION:
         PermissionStatus permission = await Permission.location.status;
         return permission;
         break;
-      case  PermissionRequestType.RECORD_AUDIO:
+      case PermissionRequestType.RECORD_AUDIO:
         PermissionStatus permission = await Permission.microphone.status;
         return permission;
         break;
-      case  PermissionRequestType.STORAGE:
-        if(isIOS){
+      case PermissionRequestType.STORAGE:
+        if (Platform.isIOS) {
           PermissionStatus permission = await Permission.photos.status;
           return permission;
         } else {
@@ -74,7 +120,7 @@ class RetroPermissionHandler {
         }
         break;
       default:
-        return  null;
+        return null;
         break;
     }
   }
@@ -105,5 +151,4 @@ class RetroPermissionHandler {
     else if (result == 1) event = true;
     return event;
   }
-
 }
