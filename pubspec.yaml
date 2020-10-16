@@ -11,13 +11,12 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  camera: ^0.5.8+5
+  camera: ^0.5.8+9
   flutter_native_image: ^0.0.5+2
-  image_picker: ^0.6.7+4
-  image_picker_for_web: ^0.1.0+1
-  permission_handler: ^5.0.0+hotfix.9
-  keyboard_actions: ^3.3.0+1
-  path_provider: ^1.6.18
+  image_picker: ^0.6.7+12
+  permission_handler: ^5.0.1+1
+  keyboard_actions: ^3.3.1+1
+  path_provider: ^1.6.21
   android_gallery_picker:
     git:
       url: https://github.com/leovu/android_gallery_picker.git
