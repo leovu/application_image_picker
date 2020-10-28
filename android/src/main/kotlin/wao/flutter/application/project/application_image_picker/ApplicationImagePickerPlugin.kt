@@ -140,11 +140,11 @@ class ApplicationImagePickerPlugin: FlutterPlugin, MethodCallHandler , ActivityA
   }
 
   override fun onDetachedFromActivity() {
-    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+//    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
   }
 
   override fun onReattachedToActivityForConfigChanges(binding: ActivityPluginBinding) {
-    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+//    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
   }
 
   override fun onAttachedToActivity(binding: ActivityPluginBinding) {
@@ -152,7 +152,7 @@ class ApplicationImagePickerPlugin: FlutterPlugin, MethodCallHandler , ActivityA
   }
 
   override fun onDetachedFromActivityForConfigChanges() {
-    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+//    TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
   }
 
   override fun onDetachedFromEngine(@NonNull binding: FlutterPlugin.FlutterPluginBinding) {
