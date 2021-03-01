@@ -63,13 +63,35 @@ class _State extends State<MainPage> {
             child: MaterialButton(
               child: Text('Get Image'),
               onPressed: () async {
-                var tempImage = await RetroImagePicker.openPictureSelection(
+                var tempImage = await RetroImagePicker.pickImage(
                     context,
                     appBarColor: "#FF0000",
                     titleAppBar: "Gallery");
                 if (tempImage != null) {
                   setState(() {
+                    print(tempImage.absolute.path);
                     image = tempImage;
+                  });
+                }
+              },
+            ),
+          ),
+        ),
+        Container(
+          height: 40.0,
+          child: Center(
+            child: MaterialButton(
+              child: Text('Get Images'),
+              onPressed: () async {
+                var tempImage = await RetroImagePicker.pickImages(
+                    context,
+                    appBarColor: "#FF0000",
+                    titleAppBar: "Gallery",
+                    limitMultiPick: 3);
+                if (tempImage != null) {
+                  setState(() {
+                    print(tempImage);
+                    image = tempImage.last;
                   });
                 }
               },

@@ -17,6 +17,7 @@ dependencies:
   permission_handler: ^5.0.1+1
   keyboard_actions: ^3.3.1+1
   path_provider: ^1.6.21
+  multi_image_picker: ^4.7.15
   android_gallery_picker:
     git:
       url: https://github.com/leovu/android_gallery_picker.git

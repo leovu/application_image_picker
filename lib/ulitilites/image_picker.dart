@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:android_gallery_picker/android_gallery_picker.dart';
 import 'package:application_image_picker/application_platform.dart';
 import 'package:application_image_picker/camera/custom_camera.dart';
 import 'package:application_image_picker/ulitilites/constant.dart';
@@ -78,6 +79,46 @@ class ApplicationImagePicker {
       } else {
         return null;
       }
+    }
+  }
+
+  static Future<List<File>> pickImages(BuildContext context,
+      { double maxWidth,
+        double maxHeight,
+        int imageQuality,
+        String appBarColor,
+        String titleAppBar,
+        int limitMultiPick}) async {
+    try {
+      bool permission = false;
+      if (ApplicationPlatform.isAndroid) {
+        permission = await storagePermission(context);
+      } else {
+        permission = true;
+      }
+      if (!permission) return null;
+    } catch (_) {
+      return null;
+    }
+    if (Platform.isAndroid) {
+      List<File> images = await AndroidGalleryPicker.images(colorAppBar:titleAppBar,
+          titleAppBar:titleAppBar, limitMultiPick:limitMultiPick);
+      return images;
+    } else {
+      List<dynamic> event = await MethodChannel("flutter.io/gallery")
+          .invokeMethod<List<dynamic>>('gallery', {
+        "limitMultiPick": (limitMultiPick ?? 3).toString()
+      });
+      if (event == null) return null;
+      List<File> _arr = [];
+      if (event.length > 0) {
+        event.forEach((element) {
+          String url = element;
+          url = url.replaceAll("file:///", "/private/");
+          _arr.add(File(url));
+        });
+      }
+      return Future.value(_arr);
     }
   }
 

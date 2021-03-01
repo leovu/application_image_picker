@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:io';
-
 import 'package:application_image_picker/ulitilites/constant.dart';
 import 'package:application_image_picker/ulitilites/dialog.dart';
 import 'package:application_image_picker/ulitilites/hex_color.dart';
@@ -37,6 +36,35 @@ class RetroImagePicker {
         maxWidth: maxWidth,
         appBarColor: appBarColor,
         titleAppBar: titleAppBar);
+  }
+
+  static Future<List<File>> pickImages(BuildContext context,
+      {@required RetroImageSource source,
+        double maxWidth,
+        double maxHeight,
+        int imageQuality,
+        String strConfirm,
+        String strNotification,
+        String strAlertCamera,
+        String strSelectGallery,
+        String strTakePhoto,
+        String appBarColor,
+        String titleAppBar,
+        int limitMultiPick}) async {
+    Common().init(
+      strAlertCamera: strAlertCamera,
+      strConfirm: strConfirm,
+      strNotification: strNotification,
+      strSelectGallery: strSelectGallery,
+      strTakePhoto: strTakePhoto,
+    );
+    return ApplicationImagePicker.pickImages(context,
+        imageQuality: imageQuality,
+        maxHeight: maxHeight,
+        maxWidth: maxWidth,
+        appBarColor: appBarColor,
+        titleAppBar: titleAppBar,
+        limitMultiPick: limitMultiPick);
   }
 
   static Future<File> openPictureSelection(BuildContext context,
