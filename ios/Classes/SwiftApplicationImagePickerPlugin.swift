@@ -1,6 +1,6 @@
 import Flutter
 import UIKit
-import ImagePicker
+import BSImagePicker
 import Photos
 
 public class SwiftApplicationImagePickerPlugin: NSObject, FlutterPlugin {
@@ -28,43 +28,54 @@ public class SwiftApplicationImagePickerPlugin: NSObject, FlutterPlugin {
   }
 }
 
-class ImagePickerRetro : NSObject, ImagePickerDelegate {
+class ImagePickerRetro : NSObject {
     var result:FlutterResult!
     var limit:Int = 3
     override init() {
         super.init()
     }
-    var delegate:ImagePickerDelegate?
-    func wrapperDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {}
-    func doneButtonDidPress(_ imagePicker: ImagePickerController, images: [UIImage]) {
-            if let topController = UIApplication.topViewController() {
-                var _arr:[String] = []
-                for image in images {
-                    let path = "photo/temp/wao/\(Date().timeIntervalSince1970).jpg"
-                    guard let url = image.save(at: .documentDirectory,
-                                    pathAndImageName: path) else {return}
-                    _arr.append(url.absoluteString)
-                }
-                topController.dismiss(animated: true) {
-                    self.result(_arr)
-                }
-            }
-        }
-    func cancelButtonDidPress(_ imagePicker: ImagePickerController) {
+    func pickImages() {
+        let imagePicker = ImagePickerController()
+        imagePicker.settings.fetch.assets.supportedMediaTypes = [.image]
+        imagePicker.settings.selection.max = limit
         if let topController = UIApplication.topViewController() {
-            topController.dismiss(animated: true) {
+            topController.presentImagePicker(imagePicker, select: { (asset) in },
+            deselect: { (asset) in },
+            cancel: { (assets) in
                 self.result(nil)
-            }
+            }, finish: { (assets) in
+                self.assetsReading(assets: assets)
+            })
         }
     }
-    func pickImages() {
-        self.delegate = self
-        let imagePickerController = ImagePickerController()
-        imagePickerController.delegate = self.delegate
-        imagePickerController.imageLimit = self.limit
-        if let topController = UIApplication.topViewController() {
-            topController.present(imagePickerController, animated: true, completion: nil)
-        }
+    private func assetsReading(assets:[PHAsset]) {
+        var _arr:[String] = []
+            if (assets.count > 0) {
+                for i in 0...assets.count-1 {
+                    let requestOptions = PHImageRequestOptions()
+                    requestOptions.resizeMode = PHImageRequestOptionsResizeMode.exact
+                    requestOptions.deliveryMode = PHImageRequestOptionsDeliveryMode.highQualityFormat
+                    requestOptions.isSynchronous = true
+                    PHImageManager.default().requestImage(for: assets[i], targetSize: PHImageManagerMaximumSize, contentMode: .aspectFit, options: requestOptions) { (image, info) in
+                        let path = "photo/temp/\(Bundle.main.displayName ?? "wao")/\(Date().timeIntervalSince1970).jpg"
+                            guard let url = image?.save(at: .documentDirectory,
+                                            pathAndImageName: path) else {return}
+                            _arr.append(url.absoluteString)
+                        }
+                        if i == assets.count-1 {
+                            self.result(_arr)
+                        }
+                    }
+                }
+            else {
+                self.result(nil)
+            }
+    }
+}
+extension Bundle {
+    var displayName: String? {
+            return object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ??
+                object(forInfoDictionaryKey: "CFBundleName") as? String
     }
 }
 extension UIApplication {
