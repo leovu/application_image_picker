@@ -101,7 +101,7 @@ class ApplicationImagePicker {
       return null;
     }
     if (Platform.isAndroid) {
-      List<File> images = await AndroidGalleryPicker.images(colorAppBar:titleAppBar,
+      List<File> images = await AndroidGalleryPicker.images(colorAppBar:appBarColor,
           titleAppBar:titleAppBar, limitMultiPick:limitMultiPick);
       return images;
     } else {
