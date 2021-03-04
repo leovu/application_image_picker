@@ -58,13 +58,20 @@ class RetroImagePicker {
       strSelectGallery: strSelectGallery,
       strTakePhoto: strTakePhoto,
     );
-    return ApplicationImagePicker.pickImages(context,
+    Future<List<File>> results = ApplicationImagePicker.pickImages(context,
         imageQuality: imageQuality,
         maxHeight: maxHeight,
         maxWidth: maxWidth,
         appBarColor: appBarColor,
         titleAppBar: titleAppBar,
         limitMultiPick: limitMultiPick);
+    List<File> result = await results;
+    if (result != null) {
+      for (int i =0;i<=result.length-1;i++) {
+        result[i] = await ApplicationImagePicker.compressImage(result[i]);
+      }
+    }
+    return result;
   }
 
   static Future<File> openPictureSelection(BuildContext context,

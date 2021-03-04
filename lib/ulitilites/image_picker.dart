@@ -112,13 +112,17 @@ class ApplicationImagePicker {
       if (event == null) return null;
       List<File> _arr = [];
       if (event.length > 0) {
-        event.forEach((element) {
+        event.forEach((element)  {
           String url = element;
           url = url.replaceAll("file:///", "/private/");
-          _arr.add(File(url));
+          File file = File(url);
+          _arr.add(file);
         });
+        return _arr;
       }
-      return Future.value(_arr);
+      else {
+        return null;
+      }
     }
   }
 

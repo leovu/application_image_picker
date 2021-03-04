@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8869401b-e120-4d29-8869-f67246b2810a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/application_image_picker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/application_image_picker.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Podfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/Runner/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Classes/SwiftApplicationImagePickerPlugin.swift" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Classes/SwiftApplicationImagePickerPlugin.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/application_image_picker.podspec" beforeDir="false" afterPath="$PROJECT_DIR$/ios/application_image_picker.podspec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/application_image_picker.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/application_image_picker.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ulitilites/image_picker.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ulitilites/image_picker.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,25 +24,6 @@
         <option value="Dart File" />
       </list>
     </option>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>onBackPressed</find>
-      <find>stringConfirm</find>
-      <find>HexColor(&quot;#</find>
-      <find>Media</find>
-      <find>takePhoto</find>
-      <find>take</find>
-      <find>selfie-ellipse</find>
-      <find>titleAppBar</find>
-      <find>application_image_picker</find>
-      <find>getPlatformVersion</find>
-      <find>uses</find>
-      <find>PermissionStatus</find>
-      <find>5.6.2</find>
-      <find>flutter.io/gallery</find>
-      <find>gallery</find>
-    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -96,25 +70,29 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1238" height="227" key="GridCell.Tab.0.bottom" timestamp="1614669797410">
+    <state width="536" height="446" key="DebuggerActiveHint" timestamp="1614832062303">
       <screen x="0" y="25" width="1280" height="665" />
     </state>
-    <state width="1238" height="227" key="GridCell.Tab.0.bottom/0.25.1280.665@0.25.1280.665" timestamp="1614669797410" />
+    <state width="536" height="446" key="DebuggerActiveHint/0.25.1280.665@0.25.1280.665" timestamp="1614832062303" />
+    <state width="1238" height="244" key="GridCell.Tab.0.bottom" timestamp="1614833251921">
+      <screen x="0" y="25" width="1280" height="665" />
+    </state>
+    <state width="1238" height="244" key="GridCell.Tab.0.bottom/0.25.1280.665@0.25.1280.665" timestamp="1614833251921" />
     <state width="1238" height="289" key="GridCell.Tab.0.bottom/0.25.1280.671@0.25.1280.671" timestamp="1614669094418" />
-    <state width="1238" height="227" key="GridCell.Tab.0.center" timestamp="1614669797410">
+    <state width="1238" height="244" key="GridCell.Tab.0.center" timestamp="1614833251920">
       <screen x="0" y="25" width="1280" height="665" />
     </state>
-    <state width="1238" height="227" key="GridCell.Tab.0.center/0.25.1280.665@0.25.1280.665" timestamp="1614669797409" />
+    <state width="1238" height="244" key="GridCell.Tab.0.center/0.25.1280.665@0.25.1280.665" timestamp="1614833251920" />
     <state width="1238" height="289" key="GridCell.Tab.0.center/0.25.1280.671@0.25.1280.671" timestamp="1614669094417" />
-    <state width="1238" height="227" key="GridCell.Tab.0.left" timestamp="1614669797408">
+    <state width="1238" height="244" key="GridCell.Tab.0.left" timestamp="1614833251920">
       <screen x="0" y="25" width="1280" height="665" />
     </state>
-    <state width="1238" height="227" key="GridCell.Tab.0.left/0.25.1280.665@0.25.1280.665" timestamp="1614669797408" />
+    <state width="1238" height="244" key="GridCell.Tab.0.left/0.25.1280.665@0.25.1280.665" timestamp="1614833251920" />
     <state width="1238" height="289" key="GridCell.Tab.0.left/0.25.1280.671@0.25.1280.671" timestamp="1614669094417" />
-    <state width="1238" height="227" key="GridCell.Tab.0.right" timestamp="1614669797410">
+    <state width="1238" height="244" key="GridCell.Tab.0.right" timestamp="1614833251921">
       <screen x="0" y="25" width="1280" height="665" />
     </state>
-    <state width="1238" height="227" key="GridCell.Tab.0.right/0.25.1280.665@0.25.1280.665" timestamp="1614669797410" />
+    <state width="1238" height="244" key="GridCell.Tab.0.right/0.25.1280.665@0.25.1280.665" timestamp="1614833251921" />
     <state width="1238" height="289" key="GridCell.Tab.0.right/0.25.1280.671@0.25.1280.671" timestamp="1614669094417" />
     <state x="305" y="25" width="670" height="676" key="search.everywhere.popup" timestamp="1614586419832">
       <screen x="0" y="25" width="1280" height="665" />
