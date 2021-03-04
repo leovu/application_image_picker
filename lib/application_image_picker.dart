@@ -71,6 +71,7 @@ class RetroImagePicker {
         result[i] = await ApplicationImagePicker.compressImage(result[i]);
       }
     }
+    await Future.delayed(Duration(seconds:1));
     return result;
   }
 
