@@ -6,7 +6,6 @@ import 'package:application_image_picker/ulitilites/dialog.dart';
 import 'package:application_image_picker/ulitilites/hex_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:keyboard_actions/keyboard_actions.dart';
 
 class ProgressDialog {
   bool _isShowing = false;
@@ -57,13 +56,11 @@ class CustomDialog extends StatelessWidget {
   final Widget screen;
   final bool bottom;
   final bool cancelable;
-  final List<KeyboardActionsItem> actions;
 
   CustomDialog(
       {@required this.screen,
       this.bottom = false,
-      this.cancelable = true,
-      this.actions})
+      this.cancelable = true})
       : assert(screen != null && cancelable != null);
 
   @override
@@ -95,7 +92,6 @@ class CustomDialog extends StatelessWidget {
           ),
         ),
       ),
-      actions: actions ?? [],
     );
   }
 }
@@ -134,12 +130,11 @@ hideKeyboard(BuildContext context) {
 
 class CustomKeyboardForm extends StatelessWidget {
   final Widget body;
-  final List<KeyboardActionsItem> actions;
   final Color backgroundColor;
 
   CustomKeyboardForm(
-      {@required this.body, @required this.actions, this.backgroundColor})
-      : assert(body != null && actions != null);
+      {@required this.body, this.backgroundColor})
+      : assert(body != null);
 
   @override
   Widget build(BuildContext context) {
@@ -151,22 +146,13 @@ class CustomKeyboardForm extends StatelessWidget {
                 height: MediaQuery.of(context).size.height,
                 child: body,
               )
-            : KeyboardActions(
-                config: configKeyboardActions(actions),
-                child: Container(
+            :  Container(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height,
                   child: body,
                 ),
-              ));
+              );
   }
-}
-
-configKeyboardActions(List<KeyboardActionsItem> actions) {
-  return KeyboardActionsConfig(
-      keyboardActionsPlatform: KeyboardActionsPlatform.IOS,
-      keyboardBarColor: Colors.grey[200],
-      actions: actions);
 }
 
 class CustomAlertDialog extends StatelessWidget {

@@ -2,7 +2,6 @@ import 'package:application_image_picker/ulitilites/constant.dart';
 import 'package:application_image_picker/ulitilites/hex_color.dart';
 import 'package:application_image_picker/ulitilites/progress_dialog.dart';
 import 'package:flutter/material.dart';
-import 'package:keyboard_actions/keyboard_actions.dart';
 
 
 openAlertDialog(BuildContext context, String title, String content,
@@ -219,7 +218,6 @@ class CustomNavigator {
     bool root = true,
     bool isExpanded = false,
     bool cancelable = true,
-    List<KeyboardActionsItem> actions,
   }) {
     return push(
         context,
@@ -228,7 +226,6 @@ class CustomNavigator {
             child: child,
             isExpanded: isExpanded,
           ),
-          actions: actions,
           cancelable: cancelable,
         ),
         opaque: false,

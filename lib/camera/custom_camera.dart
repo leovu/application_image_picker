@@ -267,19 +267,15 @@ class _State extends State<CameraAndroidHome> with WidgetsBindingObserver {
       showInSnackBar('Error: select a camera first.');
       return null;
     }
-    final Directory extDir = await getApplicationDocumentsDirectory();
-    final String dirPath = '${extDir.path}/Pictures/flutter_test';
-    await Directory(dirPath).create(recursive: true);
-    final String filePath = '$dirPath/${timestamp()}.jpg';
-
+    File fileImage;
     if (controller.value.isTakingPicture) {
       // A capture is already pending, do nothing.
       return null;
     }
 
     try {
-      await controller.takePicture(filePath);
-      File file = File(filePath);
+      XFile file = await controller.takePicture();
+      fileImage = File(file.path);
       List<dynamic> result = [];
       result.add(file);
       bool isCurrentFront =
@@ -292,7 +288,7 @@ class _State extends State<CameraAndroidHome> with WidgetsBindingObserver {
       _showCameraException(e);
       return null;
     }
-    return filePath;
+    return fileImage.path;
   }
 
   void _showCameraException(CameraException e) {
