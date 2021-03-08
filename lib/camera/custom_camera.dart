@@ -172,7 +172,7 @@ class _State extends State<CameraAndroidHome> with WidgetsBindingObserver {
             child: Container(
               padding: EdgeInsets.all(4.0),
               decoration:
-                  BoxDecoration(shape: BoxShape.circle, color: Colors.white),
+              BoxDecoration(shape: BoxShape.circle, color: Colors.white),
               width: MediaQuery.of(context).size.height * 0.065,
               height: MediaQuery.of(context).size.height * 0.065,
               child: Container(
@@ -184,8 +184,8 @@ class _State extends State<CameraAndroidHome> with WidgetsBindingObserver {
               ),
             ),
             onPressed: controller != null &&
-                    controller.value.isInitialized &&
-                    !controller.value.isRecordingVideo
+                controller.value.isInitialized &&
+                !controller.value.isRecordingVideo
                 ? onTakePictureButtonPressed
                 : null,
           ),
@@ -267,32 +267,28 @@ class _State extends State<CameraAndroidHome> with WidgetsBindingObserver {
       showInSnackBar('Error: select a camera first.');
       return null;
     }
-    final Directory extDir = await getApplicationDocumentsDirectory();
-    final String dirPath = '${extDir.path}/Pictures/flutter_test';
-    await Directory(dirPath).create(recursive: true);
-    final String filePath = '$dirPath/${timestamp()}.jpg';
-
+    File fileImage;
     if (controller.value.isTakingPicture) {
       // A capture is already pending, do nothing.
       return null;
     }
 
     try {
-      await controller.takePicture(filePath);
-      File file = File(filePath);
+      XFile file = await controller.takePicture();
+      fileImage = File(file.path);
       List<dynamic> result = [];
       result.add(file);
       bool isCurrentFront =
-          controller.description.lensDirection == CameraLensDirection.front
-              ? true
-              : false;
+      controller.description.lensDirection == CameraLensDirection.front
+          ? true
+          : false;
       result.add(isCurrentFront);
       CustomNavigator().pop(context, object: result);
     } on CameraException catch (e) {
       _showCameraException(e);
       return null;
     }
-    return filePath;
+    return fileImage.path;
   }
 
   void _showCameraException(CameraException e) {
