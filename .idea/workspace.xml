@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8869401b-e120-4d29-8869-f67246b2810a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/application_image_picker/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/application_image_picker/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/application_image_picker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/application_image_picker/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,12 +32,8 @@
   <component name="KotlinMultiplatform">
     <allAvailableExecutables />
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1366" />
-    <option name="height" value="646" />
-  </component>
   <component name="ProjectId" id="1p91ndBfHYksx3E8LU46iZQ7a2T" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -93,10 +91,11 @@
     </state>
     <state width="1238" height="244" key="GridCell.Tab.0.right/0.25.1280.665@0.25.1280.665" timestamp="1614833251921" />
     <state width="1238" height="244" key="GridCell.Tab.0.right/0.25.1280.671@0.25.1280.671" timestamp="1614834560064" />
-    <state x="332" y="112" width="935" height="490" key="find.popup" timestamp="1615173537361">
-      <screen x="0" y="25" width="1280" height="665" />
+    <state x="339" y="108" width="1027" height="490" key="find.popup" timestamp="1615276024674">
+      <screen x="0" y="25" width="1366" height="633" />
     </state>
     <state x="332" y="112" width="935" height="490" key="find.popup/0.25.1280.665@0.25.1280.665" timestamp="1615173537361" />
+    <state x="339" y="108" width="1027" height="490" key="find.popup/1366.-7.1280.775/0.25.1366.633@0.25.1366.633" timestamp="1615276024674" />
     <state x="305" y="25" width="670" height="676" key="search.everywhere.popup" timestamp="1615173526709">
       <screen x="0" y="25" width="1280" height="665" />
     </state>

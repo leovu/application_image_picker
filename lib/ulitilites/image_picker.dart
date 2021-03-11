@@ -56,8 +56,9 @@ class ApplicationImagePicker {
       if (resultCamera.length == 0) {
         return null;
       }
-      File image = resultCamera[0];
-      return compressImage(image);
+      XFile image = resultCamera[0];
+      File file = File(image.path);
+      return compressImage(file);
     } else if (source == ImageSource.gallery && Platform.isAndroid) {
       print(titleAppBar);
       String event = await MethodChannel("flutter.io/gallery")

@@ -2,5 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/example/ios/.symlinks/plugins/android_gallery_picker" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/example/ios/.symlinks/plugins/application_image_picker" vcs="Git" />
   </component>
 </project>
