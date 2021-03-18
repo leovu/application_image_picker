@@ -56,6 +56,7 @@ class ImagePickerRetro : NSObject {
                     requestOptions.resizeMode = PHImageRequestOptionsResizeMode.exact
                     requestOptions.deliveryMode = PHImageRequestOptionsDeliveryMode.highQualityFormat
                     requestOptions.isSynchronous = true
+                    requestOptions.isNetworkAccessAllowed = true
                     PHImageManager.default().requestImage(for: assets[i], targetSize: PHImageManagerMaximumSize, contentMode: .aspectFit, options: requestOptions) { (image, info) in
                         let path = "photo/temp/\(Bundle.main.displayName ?? "wao")/\(Date().timeIntervalSince1970).jpg"
                             guard let url = image?.save(at: .documentDirectory,
