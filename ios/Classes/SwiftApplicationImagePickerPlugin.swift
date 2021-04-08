@@ -20,12 +20,34 @@ public class SwiftApplicationImagePickerPlugin: NSObject, FlutterPlugin {
         imgPicker.result = result
         imgPicker.limit = Int(args["limitMultiPick"] as! String) ?? 3
         imgPicker.pickImages()
+        deleteCache()
     }
     else {
         result(FlutterMethodNotImplemented);
         return
     }
   }
+  private func deleteCache() {
+        let maximumDays = 7.0
+            let minimumDate = Date().addingTimeInterval(-maximumDays*24*60*60)
+            func meetsRequirement(date: Date) -> Bool { return date < minimumDate }
+
+            do {
+                let manager = FileManager.default
+                let documentDirUrl = try manager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
+                if manager.changeCurrentDirectoryPath(documentDirUrl.path) {
+                    for file in try manager.contentsOfDirectory(atPath: "photo/temp/\(Bundle.main.displayName ?? "wao")/") {
+                        let creationDate = try manager.attributesOfItem(atPath: file)[FileAttributeKey.creationDate] as! Date
+                        if meetsRequirement(date: creationDate) {
+                            try manager.removeItem(atPath: file)
+                        }
+                    }
+                }
+            }
+            catch {
+                print("Cannot cleanup the old files: \(error)")
+            }
+    }
 }
 
 class ImagePickerRetro : NSObject {
