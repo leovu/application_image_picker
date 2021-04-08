@@ -37,9 +37,9 @@ public class SwiftApplicationImagePickerPlugin: NSObject, FlutterPlugin {
                 let documentDirUrl = try manager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
                 if manager.changeCurrentDirectoryPath(documentDirUrl.path) {
                     for file in try manager.contentsOfDirectory(atPath: "photo/temp/\(Bundle.main.displayName ?? "wao")/") {
-                        let creationDate = try manager.attributesOfItem(atPath: file)[FileAttributeKey.creationDate] as! Date
+                        let creationDate = try manager.attributesOfItem(atPath: documentDirUrl.path + "/photo/temp/\(Bundle.main.displayName ?? "wao")/" + file)[FileAttributeKey.creationDate] as! Date
                         if meetsRequirement(date: creationDate) {
-                            try manager.removeItem(atPath: file)
+                            try manager.removeItem(atPath: documentDirUrl.path + "/photo/temp/\(Bundle.main.displayName ?? "wao")/" + file)
                         }
                     }
                 }
