@@ -140,7 +140,7 @@ class _State extends State<CameraAndroidHome> with WidgetsBindingObserver {
               ),
             ),
             Padding(
-              padding: EdgeInsets.only(bottom: 8.0),
+              padding: EdgeInsets.only(bottom: 8.0,top: 8.0),
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 child: _captureControlRowWidget(),
@@ -157,10 +157,7 @@ class _State extends State<CameraAndroidHome> with WidgetsBindingObserver {
     if (controller == null || !controller.value.isInitialized) {
       return Container();
     } else {
-      return AspectRatio(
-        aspectRatio: controller.value.aspectRatio,
-        child: CameraPreview(controller),
-      );
+      return CameraPreview(controller);
     }
   }
 
@@ -224,7 +221,7 @@ class _State extends State<CameraAndroidHome> with WidgetsBindingObserver {
     if (controller != null) {
       await controller.dispose();
     }
-    controller = CameraController(cameraDescription, ResolutionPreset.medium,
+    controller = CameraController(cameraDescription, ResolutionPreset.max,
         enableAudio: false);
 
     // If the controller is updated then update the UI.
