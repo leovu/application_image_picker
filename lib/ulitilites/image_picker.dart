@@ -63,8 +63,10 @@ class ApplicationImagePicker {
       print(titleAppBar);
       String event = await MethodChannel("flutter.io/gallery")
           .invokeMethod<String>('gallery', {
+        "multiPick": "false",
         "colorAppBar": appBarColor ?? "#000000",
-        "titleAppBar": titleAppBar ?? ""
+        "titleAppBar": titleAppBar ?? "",
+        "limitMultiPick": "1"
       });
       if (event == null) return null;
       return File(event);
