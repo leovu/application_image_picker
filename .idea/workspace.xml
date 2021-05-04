@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8869401b-e120-4d29-8869-f67246b2810a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_SDK.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/application_image_picker/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/application_image_picker/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/ios/.symlinks/plugins/application_image_picker/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/example/ios/.symlinks/plugins/application_image_picker/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/application_image_picker.iml" beforeDir="false" afterPath="$PROJECT_DIR$/application_image_picker.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +40,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
@@ -67,6 +70,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
+    <state x="-1219" y="25" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1620094371949">
+      <screen x="-1366" y="25" width="1366" height="743" />
+    </state>
+    <state x="-1219" y="25" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1366.680/-1366.25.1366.743@-1366.25.1366.743" timestamp="1620094371949" />
     <state width="536" height="446" key="DebuggerActiveHint" timestamp="1614832062303">
       <screen x="0" y="25" width="1280" height="665" />
     </state>
@@ -91,14 +98,19 @@
     </state>
     <state width="1238" height="244" key="GridCell.Tab.0.right/0.25.1280.665@0.25.1280.665" timestamp="1614833251921" />
     <state width="1238" height="244" key="GridCell.Tab.0.right/0.25.1280.671@0.25.1280.671" timestamp="1614834560064" />
+    <state x="-1182" y="25" key="SettingsEditor" timestamp="1620094370242">
+      <screen x="-1366" y="25" width="1366" height="743" />
+    </state>
+    <state x="-1182" y="25" key="SettingsEditor/0.25.1366.680/-1366.25.1366.743@-1366.25.1366.743" timestamp="1620094370242" />
     <state x="339" y="108" width="1027" height="490" key="find.popup" timestamp="1615276024674">
       <screen x="0" y="25" width="1366" height="633" />
     </state>
     <state x="332" y="112" width="935" height="490" key="find.popup/0.25.1280.665@0.25.1280.665" timestamp="1615173537361" />
     <state x="339" y="108" width="1027" height="490" key="find.popup/1366.-7.1280.775/0.25.1366.633@0.25.1366.633" timestamp="1615276024674" />
-    <state x="305" y="25" width="670" height="676" key="search.everywhere.popup" timestamp="1615173526709">
-      <screen x="0" y="25" width="1280" height="665" />
+    <state x="-1041" y="25" width="716" height="756" key="search.everywhere.popup" timestamp="1620094255353">
+      <screen x="-1366" y="25" width="1366" height="743" />
     </state>
     <state x="305" y="25" width="670" height="676" key="search.everywhere.popup/0.25.1280.665@0.25.1280.665" timestamp="1615173526709" />
+    <state x="-1041" y="25" width="716" height="756" key="search.everywhere.popup/0.25.1366.680/-1366.25.1366.743@-1366.25.1366.743" timestamp="1620094255353" />
   </component>
 </project>
