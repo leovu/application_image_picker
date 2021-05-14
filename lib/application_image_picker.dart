@@ -40,17 +40,17 @@ class RetroImagePicker {
 
   static Future<List<File>> pickImages(BuildContext context,
       {@required RetroImageSource source,
-        double maxWidth,
-        double maxHeight,
-        int imageQuality,
-        String strConfirm,
-        String strNotification,
-        String strAlertCamera,
-        String strSelectGallery,
-        String strTakePhoto,
-        String appBarColor,
-        String titleAppBar,
-        int limitMultiPick}) async {
+      double maxWidth,
+      double maxHeight,
+      int imageQuality,
+      String strConfirm,
+      String strNotification,
+      String strAlertCamera,
+      String strSelectGallery,
+      String strTakePhoto,
+      String appBarColor,
+      String titleAppBar,
+      int limitMultiPick}) async {
     Common().init(
       strAlertCamera: strAlertCamera,
       strConfirm: strConfirm,
@@ -67,11 +67,11 @@ class RetroImagePicker {
         limitMultiPick: limitMultiPick);
     List<File> result = await results;
     if (result != null) {
-      for (int i =0;i<=result.length-1;i++) {
+      for (int i = 0; i <= result.length - 1; i++) {
         result[i] = await ApplicationImagePicker.compressImage(result[i]);
       }
     }
-    await Future.delayed(Duration(seconds:1));
+    await Future.delayed(Duration(seconds: 1));
     return result;
   }
 
@@ -102,6 +102,38 @@ class RetroImagePicker {
           appBarColor: appBarColor, titleAppBar: titleAppBar);
     } else if (option == "camera") {
       return await _showPopupImage(context, 1,
+          appBarColor: appBarColor, titleAppBar: titleAppBar);
+    }
+    return null;
+  }
+
+  static Future<List<File>> openPicturesSelection(BuildContext context,
+      {String strConfirm,
+      String strNotification,
+      String strAlertCamera,
+      String strSelectGallery,
+      String strTakePhoto,
+      String appBarColor,
+      String titleAppBar}) async {
+    Common().init(
+      strAlertCamera: strAlertCamera,
+      strConfirm: strConfirm,
+      strNotification: strNotification,
+      strSelectGallery: strSelectGallery,
+      strTakePhoto: strTakePhoto,
+    );
+    String option = await showModalBottomSheet<String>(
+        context: context,
+        elevation: 1,
+        backgroundColor: Colors.transparent,
+        builder: (BuildContext bc) {
+          return renderPictureSelection(context);
+        });
+    if (option == "gallery") {
+      return await _showPopupImages(context, 0,
+          appBarColor: appBarColor, titleAppBar: titleAppBar);
+    } else if (option == "camera") {
+      return await _showPopupImages(context, 1,
           appBarColor: appBarColor, titleAppBar: titleAppBar);
     }
     return null;
@@ -251,6 +283,34 @@ class RetroImagePicker {
           titleAppBar: titleAppBar);
       if (image != null) {
         return image;
+      }
+    }
+    return null;
+  }
+
+  static Future<List<File>> _showPopupImages(
+      BuildContext context, int imageType,
+      {String appBarColor, String titleAppBar}) async {
+    if (imageType == 1) {
+      var image = await ApplicationImagePicker.pickImage(context,
+          source: ImageSource.camera,
+          imageQuality: 100,
+          maxHeight: 2450,
+          maxWidth: 1750,
+          appBarColor: appBarColor,
+          titleAppBar: titleAppBar);
+      if (image != null) {
+        return [image];
+      }
+    } else {
+      var images = await ApplicationImagePicker.pickImages(context,
+          imageQuality: 100,
+          maxHeight: 2450,
+          maxWidth: 1750,
+          appBarColor: appBarColor,
+          titleAppBar: titleAppBar);
+      if (images != null) {
+        return images;
       }
     }
     return null;
