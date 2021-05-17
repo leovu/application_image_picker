@@ -95,12 +95,23 @@ class ImagePickerRetro : NSObject {
             }
     }
 }
-extension Bundle {
-    var displayName: String? {
-            return object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ??
-                object(forInfoDictionaryKey: "CFBundleName") as? String
+
+extension String {
+    func removingWhitespaces() -> String {
+        return components(separatedBy: .whitespaces).joined()
     }
 }
+
+extension Bundle {
+    var displayName: String? {
+        if let value = object(forInfoDictionaryKey: "CFBundleDisplayName") as? String ??
+                object(forInfoDictionaryKey: "CFBundleName") as? String {
+                    return value.removingWhitespaces()
+                }
+            return nil
+    }
+}
+
 extension UIApplication {
     class func topViewController() -> UIViewController? {
         let keyWindow = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
