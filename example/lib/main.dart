@@ -63,8 +63,8 @@ class _State extends State<MainPage> {
             child: MaterialButton(
               child: Text('Get Image'),
               onPressed: () async {
-                var tempImage = await RetroImagePicker.pickImage(
-                    context,
+                var tempImage = await RetroImagePicker.pickImage(context,
+                    source: RetroImageSource.gallery,
                     appBarColor: "#FF0000",
                     titleAppBar: "Gallery");
                 if (tempImage != null) {
@@ -83,8 +83,8 @@ class _State extends State<MainPage> {
             child: MaterialButton(
               child: Text('Get Images'),
               onPressed: () async {
-                var tempImage = await RetroImagePicker.pickImages(
-                    context,
+                var tempImage = await RetroImagePicker.pickImages(context,
+                    source: RetroImageSource.gallery,
                     appBarColor: "#FF0000",
                     titleAppBar: "Gallery",
                     limitMultiPick: 3);
