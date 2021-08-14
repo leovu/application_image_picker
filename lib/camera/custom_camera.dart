@@ -494,8 +494,15 @@ class ImageProcessor {
       final height = properties.height;
       final width = properties.width;
       final top = height - (height * 0.8).toInt();
-      File croppedFile = await FlutterNativeImage.cropImage(imagePath, (top * 1.5).round(), 0, (width * 0.37).round(), height);
-      return croppedFile;
+      if(Platform.isIOS){
+        File croppedFile = await FlutterNativeImage.cropImage(
+            imagePath, 0, (top).round(),width ,(height * 0.37).round() );
+        return croppedFile;
+      }else{
+        File croppedFile = await FlutterNativeImage.cropImage(
+            imagePath, (top * 1.5).round(), 0, (width * 0.37).round(), height);
+        return croppedFile;
+      }
     } catch (e) {
       print(e);
       File compressedFile = await FlutterNativeImage.compressImage(imagePath,
