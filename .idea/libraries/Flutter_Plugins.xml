@@ -1,16 +1,17 @@
 <component name="libraryTable">
   <library name="Flutter Plugins" type="FlutterPluginsLibraryType">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_windows-2.0.0" />
-      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/git/android_gallery_picker-312d7deb7587afdaf03285cf115ad1d3cb8c756d" />
-      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/pub.dartlang.org/image_picker-0.7.2" />
-      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/pub.dartlang.org/camera-0.8.0" />
-      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/pub.dartlang.org/permission_handler-7.1.0" />
-      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/pub.dartlang.org/flutter_native_image-0.0.5+3" />
-      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/pub.dartlang.org/flutter_plugin_android_lifecycle-2.0.0" />
-      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_linux-2.0.0" />
-      <root url="file://$PROJECT_DIR$/../flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-2.0.1" />
       <root url="file://$PROJECT_DIR$" />
+      <root url="file://$PROJECT_DIR$/../sources-project/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker-0.7.2" />
+      <root url="file://$PROJECT_DIR$/../sources-project/flutter/.pub-cache/git/android_gallery_picker-312d7deb7587afdaf03285cf115ad1d3cb8c756d" />
+      <root url="file://$PROJECT_DIR$/../sources-project/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_windows-2.0.0" />
+      <root url="file://$PROJECT_DIR$/../sources-project/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_plugin_android_lifecycle-2.0.0" />
+      <root url="file://$PROJECT_DIR$/../sources-project/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_linux-2.0.0" />
+      <root url="file://$PROJECT_DIR$/../sources-project/flutter/.pub-cache/hosted/pub.dartlang.org/permission_handler-8.0.1" />
+      <root url="file://$PROJECT_DIR$/../sources-project/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_native_image-0.0.6+1" />
+      <root url="file://$PROJECT_DIR$/../sources-project/flutter/.pub-cache/hosted/pub.dartlang.org/camera-0.8.1+7" />
+      <root url="file://$PROJECT_DIR$/../sources-project/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-2.0.2" />
+      <root url="file://$PROJECT_DIR$/../sources-project/flutter/.pub-cache/hosted/pub.dartlang.org/native_screenshot-1.0.0" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
