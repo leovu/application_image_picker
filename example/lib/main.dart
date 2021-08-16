@@ -64,9 +64,9 @@ class _State extends State<MainPage> {
               child: Text('Get Image'),
               onPressed: () async {
                 var tempImage = await RetroImagePicker.pickImage(context,
-                    source: RetroImageSource.gallery,
+                    source: RetroImageSource.camera,
                     appBarColor: "#FF0000",
-                    titleAppBar: "Gallery");
+                    titleAppBar: "Gallery",);
                 if (tempImage != null) {
                   setState(() {
                     print(tempImage.absolute.path);

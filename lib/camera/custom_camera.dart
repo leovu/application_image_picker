@@ -1,4 +1,3 @@
-
 import 'dart:async';
 import 'dart:io';
 import 'package:application_image_picker/ulitilites/dialog.dart';
@@ -19,12 +18,13 @@ class CameraAndroidHome extends StatefulWidget {
 
   CameraAndroidHome(
       {@required this.cameras,
-        this.isIDCard,
-        this.title,
-        this.previewPlayer = false,
-        this.isForceFrontCamera = false,
-        this.frame,
-        this.warning = "",this.iconCamera});
+      this.isIDCard,
+      this.title,
+      this.previewPlayer = false,
+      this.isForceFrontCamera = false,
+      this.frame,
+      this.warning = "",
+      this.iconCamera});
   @override
   _State createState() {
     return _State();
@@ -50,7 +50,7 @@ void logError(String code, String message) =>
 class _State extends State<CameraAndroidHome> with WidgetsBindingObserver {
   CameraController controller;
   String imagePath;
-  bool isScreenshot = false;
+  // bool isScreenshot = false;
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -210,42 +210,56 @@ class _State extends State<CameraAndroidHome> with WidgetsBindingObserver {
     try {
       XFile file = await controller.takePicture();
       if (widget.previewPlayer) {
-        fileImage = await ImageProcessor.crop(file.path,MediaQuery.of(context).size.width,MediaQuery.of(context).size.height);
+        fileImage = await ImageProcessor.crop(
+            file.path,
+            MediaQuery.of(context).size.width,
+            MediaQuery.of(context).size.height,
+            widget.previewPlayer);
       } else {
         fileImage = File(file.path);
       }
       List<dynamic> result = [];
       result.add(fileImage);
       bool isCurrentFront =
-      controller.description.lensDirection == CameraLensDirection.front
-          ? true
-          : false;
+          controller.description.lensDirection == CameraLensDirection.front
+              ? true
+              : false;
       result.add(isCurrentFront);
       CustomNavigator().pop(context, object: result);
     } on CameraException catch (_) {
       try {
-        setState(() {
-          isScreenshot = true;
-        });
+        // setState(() {
+        //   isScreenshot = true;
+        // });
         await Future.delayed(Duration(seconds: 1));
         String path = await NativeScreenshot.takeScreenshot();
-        if(widget.previewPlayer){
-          fileImage = await ImageProcessor.crop(path,MediaQuery.of(context).size.width,MediaQuery.of(context).size.height);
-        }else{
-          fileImage = File(path);
+        if (path != null) {
+          fileImage = await ImageProcessor.crop(
+              path,
+              MediaQuery.of(context).size.width,
+              MediaQuery.of(context).size.height,
+              widget.previewPlayer);
+          // setState(() {
+          //   isScreenshot = false;
+          // });
+          List<dynamic> result = [];
+          result.add(fileImage);
+          bool isCurrentFront =
+              controller.description.lensDirection == CameraLensDirection.front
+                  ? true
+                  : false;
+          result.add(isCurrentFront);
+          CustomNavigator().pop(context, object: result);
+        } else {
+          // setState(() {
+          //   isScreenshot = false;
+          // });
+          return null;
         }
-        setState(() {
-          isScreenshot = false;
-        });
-        List<dynamic> result = [];
-        result.add(fileImage);
-        bool isCurrentFront =
-        controller.description.lensDirection == CameraLensDirection.front
-            ? true
-            : false;
-        result.add(isCurrentFront);
-        CustomNavigator().pop(context, object: result);
       } catch (e) {
+        // setState(() {
+        //   isScreenshot = false;
+        // });
         _showCameraException(e);
         return null;
       }
@@ -262,14 +276,10 @@ class _State extends State<CameraAndroidHome> with WidgetsBindingObserver {
     if (controller == null || !controller.value.isInitialized) {
       return Container();
     } else {
-      if(widget.previewPlayer){
+      if (widget.previewPlayer) {
         return Container(
           height: MediaQuery.of(context).size.height,
-          child: isScreenshot
-              ? CameraPreview(
-            controller,
-          )
-              : Stack(
+          child: Stack(
             fit: StackFit.expand,
             alignment: Alignment.topCenter,
             children: <Widget>[
@@ -293,9 +303,7 @@ class _State extends State<CameraAndroidHome> with WidgetsBindingObserver {
     return Container(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
-      child: isScreenshot
-          ? Container()
-          : Column(
+      child: Column(
         children: [
           Container(
             height: MediaQuery.of(context).padding.top +
@@ -311,7 +319,10 @@ class _State extends State<CameraAndroidHome> with WidgetsBindingObserver {
                     height: 48.0,
                     padding: EdgeInsets.only(
                         left: (MediaQuery.of(context).size.width * 0.05)),
-                    child: Icon(Icons.close,color: Colors.white,),
+                    child: Icon(
+                      Icons.close,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
                 opacity: 1.0,
@@ -333,8 +344,7 @@ class _State extends State<CameraAndroidHome> with WidgetsBindingObserver {
             Text(
               widget.warning,
               style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w600),
+                  color: Colors.white, fontWeight: FontWeight.w600),
             ),
           Expanded(child: Container()),
           (widget.previewPlayer)
@@ -359,26 +369,35 @@ class _State extends State<CameraAndroidHome> with WidgetsBindingObserver {
                       fontWeight: FontWeight.bold),
                 ),
                 Container(
-                  height: MediaQuery.of(context).size.width*0.05,
+                  height: MediaQuery.of(context).size.width * 0.05,
                 ),
                 Container(
                   height: MediaQuery.of(context).size.height * 0.08,
                   width: MediaQuery.of(context).size.height * 0.08,
                   child: MaterialButton(
-                    child: widget.iconCamera!=null?Image.asset(
+                    child: widget.iconCamera != null
+                        ? Image.asset(
                       widget.iconCamera,
-                    ): Container(
+                    )
+                        : Container(
                       padding: EdgeInsets.all(4.0),
-                      decoration:
-                      BoxDecoration(shape: BoxShape.circle, color: Colors.white),
-                      width: MediaQuery.of(context).size.height * 0.08,
-                      height: MediaQuery.of(context).size.height * 0.08,
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.white),
+                      width:
+                      MediaQuery.of(context).size.height *
+                          0.08,
+                      height:
+                      MediaQuery.of(context).size.height *
+                          0.08,
                       child: Container(
                         padding: EdgeInsets.all(4.0),
                         decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             color: Colors.white,
-                            border: Border.all(color: Colors.black, width: 1.0)),
+                            border: Border.all(
+                                color: Colors.black,
+                                width: 1.0)),
                       ),
                     ),
                     onPressed: controller != null &&
@@ -396,9 +415,11 @@ class _State extends State<CameraAndroidHome> with WidgetsBindingObserver {
       ),
     );
   }
+
   Widget _captureControlRowWidget() {
     return Container(
       color: Colors.black,
+      padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.05),
       child: Stack(
         children: <Widget>[
           Center(
@@ -409,8 +430,8 @@ class _State extends State<CameraAndroidHome> with WidgetsBindingObserver {
                 color: Colors.white,
               ),
               onPressed: controller != null &&
-                  controller.value.isInitialized &&
-                  !controller.value.isRecordingVideo
+                      controller.value.isInitialized &&
+                      !controller.value.isRecordingVideo
                   ? onTakePictureButtonPressed
                   : null,
             ),
@@ -419,7 +440,6 @@ class _State extends State<CameraAndroidHome> with WidgetsBindingObserver {
             alignment: Alignment.centerRight,
             child: Padding(
               padding: EdgeInsets.only(
-                  right: MediaQuery.of(context).size.width * 0.05,
                   top: (MediaQuery.of(context).size.height * 0.065) / 8),
               child: IconButton(
                 icon: Icon(
@@ -444,11 +464,10 @@ class _State extends State<CameraAndroidHome> with WidgetsBindingObserver {
   Widget build(BuildContext context) {
     return Scaffold(
         key: _scaffoldKey,
-        body:Stack(
+        body: Stack(
           fit: StackFit.expand,
           children: [_cameraPreviewWidgetIDCard(), _frameCameraIdCard()],
-        )
-    );
+        ));
   }
 }
 
@@ -474,7 +493,7 @@ class Clip extends CustomClipper<Path> {
     final top = size.height - (size.height * 0.8).toInt();
     Path path = Path()
       ..addRRect(RRect.fromRectAndRadius(
-          Rect.fromLTWH(0, top, size.width, size.height  * 0.37),
+          Rect.fromLTWH(0, top, size.width, size.height * 0.37),
           Radius.circular(0.0)));
     return path;
   }
@@ -487,24 +506,43 @@ class Clip extends CustomClipper<Path> {
 }
 
 class ImageProcessor {
-  static Future<File> crop(String imagePath, double maxWidth, double maxHeight) async {
+  static Future<File> crop(String imagePath, double maxWidth, double maxHeight,
+      bool isPreviewPlayer) async {
     try {
-      ImageProperties properties =
-      await FlutterNativeImage.getImageProperties(imagePath);
+      ImageProperties properties = await FlutterNativeImage.getImageProperties(imagePath);
       final height = properties.height;
       final width = properties.width;
-      final top = height - (height * 0.8).toInt();
-      if(Platform.isIOS){
-        File croppedFile = await FlutterNativeImage.cropImage(
-            imagePath, 0, (top).round(),width ,(height * 0.37).round() );
-        return croppedFile;
-      }else{
-        File croppedFile = await FlutterNativeImage.cropImage(
-            imagePath, (top * 1.5).round(), 0, (width * 0.37).round(), height);
-        return croppedFile;
+      if (isPreviewPlayer) {
+        final top = height - (height * 0.8).toInt();
+        if (Platform.isIOS) {
+          File croppedFile = await FlutterNativeImage.cropImage(imagePath, 0,
+              (top * 1.2).round(), width, (height * 0.39).round());
+          return croppedFile;
+        } else {
+          if (height < width) {
+            File croppedFile = await FlutterNativeImage.cropImage(imagePath,
+                (top * 1.2).round(), 0, (width * 0.43).round(), height);
+            return croppedFile;
+          } else {
+            final top = height - (height * 0.6).toInt();
+            File croppedFile = await FlutterNativeImage.cropImage(imagePath,
+                (top * 1.5).round(), 0, (width * 0.37).round(),(height * 0.6).round());
+            return croppedFile;
+          }
+        }
+      } else {
+        final top = height - (height * 0.9).toInt();
+        if (Platform.isIOS) {
+          File croppedFile = await FlutterNativeImage.cropImage(imagePath, 0,
+              (top * 1.2).round(), width, (height * 0.8).round());
+          return croppedFile;
+        }else{
+          File croppedFile = await FlutterNativeImage.cropImage(
+              imagePath, 0, (top * 1.5).round(), (width * 0.43).round(),height);
+          return croppedFile;
+        }
       }
     } catch (e) {
-      print(e);
       File compressedFile = await FlutterNativeImage.compressImage(imagePath,
           quality: 100,
           targetWidth:maxWidth.round(),
@@ -513,9 +551,20 @@ class ImageProcessor {
       await FlutterNativeImage.getImageProperties(compressedFile.path);
       final height = properties.height;
       final width = properties.width;
-      final top = height - (height * 0.8).toInt();
-      File croppedFile = await FlutterNativeImage.cropImage(imagePath, (width * 0.2).round(), (top * 3.5).round(), (width * 2.5).round(), (height * 0.8).round());
-      return croppedFile;
+      if(isPreviewPlayer){
+        final top = height - (height * 0.8).toInt();
+        File croppedFile = await FlutterNativeImage.cropImage(imagePath, (width * 0.1).round(), (top * 3.3).round(), (width * 2.4).round(), (height * 0.8).round());
+        return croppedFile;
+      }else{
+        final top = height - (height * 0.6).toInt();
+        File croppedFile = await FlutterNativeImage.cropImage(
+            imagePath,
+            (width * 0.1).round(),
+            top,
+            (width * 2.5).round(),
+            (height*2).round());
+        return croppedFile;
+      }
     }
   }
 }

@@ -19,7 +19,7 @@ class ApplicationImagePicker {
       double maxHeight,
       int imageQuality,
       String appBarColor,
-      String titleAppBar}) async {
+      String titleAppBar,bool isPreviewPlayer}) async {
     assert(source != null);
     try {
       bool permission = false;
@@ -46,7 +46,7 @@ class ApplicationImagePicker {
       }
       Future.delayed(Duration(seconds: 2));
       List<dynamic> resultCamera = await CustomNavigator().push(context,
-          CameraAndroidHome(cameras: cameras, isForceFrontCamera: false));
+          CameraAndroidHome(cameras: cameras, isForceFrontCamera: false,previewPlayer: false,));
       if (resultCamera == null) {
         return null;
       }
@@ -56,7 +56,7 @@ class ApplicationImagePicker {
       if (resultCamera.length == 0) {
         return null;
       }
-      XFile image = resultCamera[0];
+      File image = resultCamera[0];
       File file = File(image.path);
       return compressImage(file);
     } else if (source == ImageSource.gallery && Platform.isAndroid) {

@@ -35,7 +35,7 @@ class RetroImagePicker {
         maxHeight: maxHeight,
         maxWidth: maxWidth,
         appBarColor: appBarColor,
-        titleAppBar: titleAppBar);
+        titleAppBar: titleAppBar,isPreviewPlayer: true);
   }
 
   static Future<List<File>> pickImages(BuildContext context,

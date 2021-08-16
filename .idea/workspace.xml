@@ -4,7 +4,24 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8869401b-e120-4d29-8869-f67246b2810a" name="Default Changelist" comment="" />
+    <list default="true" id="8869401b-e120-4d29-8869-f67246b2810a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/android/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/android/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/android/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/android/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/android/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/example/android/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/application_image_picker.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/application_image_picker.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/camera/custom_camera.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/camera/custom_camera.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ulitilites/image_picker.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ulitilites/image_picker.dart" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,7 +30,7 @@
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[R58MB0PRDVH]" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -40,12 +57,17 @@
     <property name="dart.analysis.tool.window.force.activate" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="dart.settings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/example/android/gradle/wrapper" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\Documents\application_image_picker\example\android\gradle\wrapper" />
+      <recent name="C:\Users\admin\Documents\application_image_picker\android" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\admin\Documents\application_image_picker\android\gradle" />
       <recent name="$PROJECT_DIR$/lib/ulitilites" />
       <recent name="$PROJECT_DIR$/lib" />
     </key>
@@ -64,47 +86,33 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1219" y="25" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1620094371949">
-      <screen x="-1366" y="25" width="1366" height="743" />
+    <state x="549" y="207" key="FileChooserDialogImpl" timestamp="1629117816334">
+      <screen x="0" y="40" width="1536" height="824" />
     </state>
-    <state x="-1219" y="25" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1366.680/-1366.25.1366.743@-1366.25.1366.743" timestamp="1620094371949" />
-    <state width="536" height="446" key="DebuggerActiveHint" timestamp="1614832062303">
-      <screen x="0" y="25" width="1280" height="665" />
+    <state x="549" y="207" key="FileChooserDialogImpl/0.40.1536.824@0.40.1536.824" timestamp="1629117816334" />
+    <state width="1491" height="283" key="GridCell.Tab.0.bottom" timestamp="1629126770623">
+      <screen x="0" y="40" width="1536" height="824" />
     </state>
-    <state width="536" height="446" key="DebuggerActiveHint/0.25.1280.665@0.25.1280.665" timestamp="1614832062303" />
-    <state width="1238" height="244" key="GridCell.Tab.0.bottom" timestamp="1614834560064">
-      <screen x="0" y="25" width="1280" height="671" />
+    <state width="1491" height="283" key="GridCell.Tab.0.bottom/0.40.1536.824@0.40.1536.824" timestamp="1629126770623" />
+    <state width="1491" height="283" key="GridCell.Tab.0.center" timestamp="1629126770622">
+      <screen x="0" y="40" width="1536" height="824" />
     </state>
-    <state width="1238" height="244" key="GridCell.Tab.0.bottom/0.25.1280.665@0.25.1280.665" timestamp="1614833251921" />
-    <state width="1238" height="244" key="GridCell.Tab.0.bottom/0.25.1280.671@0.25.1280.671" timestamp="1614834560064" />
-    <state width="1238" height="244" key="GridCell.Tab.0.center" timestamp="1614834560063">
-      <screen x="0" y="25" width="1280" height="671" />
+    <state width="1491" height="283" key="GridCell.Tab.0.center/0.40.1536.824@0.40.1536.824" timestamp="1629126770622" />
+    <state width="1491" height="283" key="GridCell.Tab.0.left" timestamp="1629126770622">
+      <screen x="0" y="40" width="1536" height="824" />
     </state>
-    <state width="1238" height="244" key="GridCell.Tab.0.center/0.25.1280.665@0.25.1280.665" timestamp="1614833251920" />
-    <state width="1238" height="244" key="GridCell.Tab.0.center/0.25.1280.671@0.25.1280.671" timestamp="1614834560063" />
-    <state width="1238" height="244" key="GridCell.Tab.0.left" timestamp="1614834560063">
-      <screen x="0" y="25" width="1280" height="671" />
+    <state width="1491" height="283" key="GridCell.Tab.0.left/0.40.1536.824@0.40.1536.824" timestamp="1629126770622" />
+    <state width="1491" height="283" key="GridCell.Tab.0.right" timestamp="1629126770623">
+      <screen x="0" y="40" width="1536" height="824" />
     </state>
-    <state width="1238" height="244" key="GridCell.Tab.0.left/0.25.1280.665@0.25.1280.665" timestamp="1614833251920" />
-    <state width="1238" height="244" key="GridCell.Tab.0.left/0.25.1280.671@0.25.1280.671" timestamp="1614834560063" />
-    <state width="1238" height="244" key="GridCell.Tab.0.right" timestamp="1614834560064">
-      <screen x="0" y="25" width="1280" height="671" />
+    <state width="1491" height="283" key="GridCell.Tab.0.right/0.40.1536.824@0.40.1536.824" timestamp="1629126770623" />
+    <state x="277" y="97" key="SettingsEditor" timestamp="1629118471993">
+      <screen x="0" y="40" width="1536" height="824" />
     </state>
-    <state width="1238" height="244" key="GridCell.Tab.0.right/0.25.1280.665@0.25.1280.665" timestamp="1614833251921" />
-    <state width="1238" height="244" key="GridCell.Tab.0.right/0.25.1280.671@0.25.1280.671" timestamp="1614834560064" />
-    <state x="-1182" y="25" key="SettingsEditor" timestamp="1620094370242">
-      <screen x="-1366" y="25" width="1366" height="743" />
+    <state x="277" y="97" key="SettingsEditor/0.40.1536.824@0.40.1536.824" timestamp="1629118471993" />
+    <state width="436" height="68" key="javadoc.popup.new" timestamp="1629126142293">
+      <screen x="0" y="40" width="1536" height="824" />
     </state>
-    <state x="-1182" y="25" key="SettingsEditor/0.25.1366.680/-1366.25.1366.743@-1366.25.1366.743" timestamp="1620094370242" />
-    <state x="339" y="108" width="1027" height="490" key="find.popup" timestamp="1615276024674">
-      <screen x="0" y="25" width="1366" height="633" />
-    </state>
-    <state x="332" y="112" width="935" height="490" key="find.popup/0.25.1280.665@0.25.1280.665" timestamp="1615173537361" />
-    <state x="339" y="108" width="1027" height="490" key="find.popup/1366.-7.1280.775/0.25.1366.633@0.25.1366.633" timestamp="1615276024674" />
-    <state x="-1041" y="25" width="716" height="756" key="search.everywhere.popup" timestamp="1620094255353">
-      <screen x="-1366" y="25" width="1366" height="743" />
-    </state>
-    <state x="305" y="25" width="670" height="676" key="search.everywhere.popup/0.25.1280.665@0.25.1280.665" timestamp="1615173526709" />
-    <state x="-1041" y="25" width="716" height="756" key="search.everywhere.popup/0.25.1366.680/-1366.25.1366.743@-1366.25.1366.743" timestamp="1620094255353" />
+    <state width="436" height="68" key="javadoc.popup.new/0.40.1536.824@0.40.1536.824" timestamp="1629126142293" />
   </component>
 </project>
