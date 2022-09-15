@@ -52,11 +52,11 @@ openAlertDialog(BuildContext context, String title, String content,
                       child: Container(
                         // height: 80,
                         alignment: Alignment.bottomCenter,
-                        child: FlatButton(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: new BorderRadius.circular(5.0),
-                          ),
-                          padding: EdgeInsets.zero,
+                        child: TextButton(
+                          // shape: RoundedRectangleBorder(
+                          //   borderRadius: new BorderRadius.circular(5.0),
+                          // ),
+                          // padding: EdgeInsets.zero,
                           onPressed: () {
                             func == null
                                 ? CustomNavigator().pop(context)

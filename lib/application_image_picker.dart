@@ -173,11 +173,11 @@ class RetroImagePicker {
                             Container(
                               height: 30,
                               width: 30,
-                              child: FlatButton(
+                              child: TextButton(
                                 onPressed: () {
                                   CustomNavigator().pop(context, object: null);
                                 },
-                                padding: EdgeInsets.zero,
+                                // padding: EdgeInsets.zero,
                                 child: Container(
                                   child: Icon(
                                     Icons.close,
