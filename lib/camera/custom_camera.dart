@@ -7,14 +7,14 @@ import 'package:flutter_native_image/flutter_native_image.dart';
 import 'package:native_screenshot/native_screenshot.dart';
 
 class CameraAndroidHome extends StatefulWidget {
-  final List<CameraDescription> cameras;
-  final String title;
-  final bool isIDCard;
-  final bool previewPlayer;
-  final bool isForceFrontCamera;
-  final String frame;
-  final String warning;
-  final String iconCamera;
+  final List<CameraDescription>? cameras;
+  final String? title;
+  final bool? isIDCard;
+  final bool? previewPlayer;
+  final bool? isForceFrontCamera;
+  final String? frame;
+  final String? warning;
+  final String? iconCamera;
 
   CameraAndroidHome(
       {@required this.cameras,
@@ -48,9 +48,8 @@ void logError(String code, String message) =>
     print('Error: $code\nError Message: $message');
 
 class _State extends State<CameraAndroidHome> with WidgetsBindingObserver {
-  CameraController controller;
-  String imagePath;
-  // bool isScreenshot = false;
+  CameraController? controller;
+  String? imagePath;
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
@@ -58,7 +57,7 @@ class _State extends State<CameraAndroidHome> with WidgetsBindingObserver {
     super.initState();
     WidgetsBinding.instance.addObserver(this);
     if (controller != null) {
-      controller.setFlashMode(FlashMode.off);
+      controller?.setFlashMode(FlashMode.off);
     }
     WidgetsBinding.instance.addPostFrameCallback((_) {
       setCamera();
@@ -66,43 +65,43 @@ class _State extends State<CameraAndroidHome> with WidgetsBindingObserver {
   }
 
   void setCamera() {
-    if (widget.cameras.length > 0) {
-      CameraDescription camDesc;
-      if (widget.isForceFrontCamera) {
-        for (int i = 0; i <= widget.cameras.length - 1; i++) {
-          if (widget.cameras[i].lensDirection == CameraLensDirection.front) {
-            camDesc = widget.cameras[i];
+    if ((widget.cameras?.length??0) > 0) {
+      CameraDescription? camDesc;
+      if (widget.isForceFrontCamera!) {
+        for (int i = 0; i <= (widget.cameras?.length??0) - 1; i++) {
+          if (widget.cameras![i].lensDirection == CameraLensDirection.front) {
+            camDesc = widget.cameras![i];
             break;
           }
         }
-        if (camDesc == null) camDesc = widget.cameras.first;
+        if (camDesc == null) camDesc = widget.cameras!.first;
       } else {
-        for (int i = 0; i <= widget.cameras.length - 1; i++) {
-          if (widget.cameras[i].lensDirection == CameraLensDirection.back) {
-            camDesc = widget.cameras[i];
+        for (int i = 0; i <= widget.cameras!.length - 1; i++) {
+          if (widget.cameras?[i].lensDirection == CameraLensDirection.back) {
+            camDesc = widget.cameras![i];
             break;
           }
         }
-        if (camDesc == null) camDesc = widget.cameras.first;
+        if (camDesc == null) camDesc = widget.cameras!.first;
       }
       onNewCameraSelected(camDesc);
     }
   }
 
   void rotateCamera() {
-    if (widget.cameras.length > 0) {
-      CameraDescription camDesc;
-      for (int i = 0; i <= widget.cameras.length - 1; i++) {
-        if (widget.cameras[i].lensDirection !=
-            controller.description.lensDirection) {
-          if (widget.cameras[i].lensDirection == CameraLensDirection.back ||
-              widget.cameras[i].lensDirection == CameraLensDirection.front) {
-            camDesc = widget.cameras[i];
+    if ((widget.cameras?.length??0) > 0) {
+      CameraDescription? camDesc;
+      for (int i = 0; i <= (widget.cameras?.length??0) - 1; i++) {
+        if (widget.cameras?[i].lensDirection !=
+            controller?.description.lensDirection) {
+          if (widget.cameras?[i].lensDirection == CameraLensDirection.back ||
+              widget.cameras?[i].lensDirection == CameraLensDirection.front) {
+            camDesc = widget.cameras![i];
             break;
           }
         }
       }
-      if (camDesc == null) camDesc = widget.cameras.first;
+      if (camDesc == null) camDesc = widget.cameras!.first;
       onNewCameraSelected(camDesc);
     }
   }
@@ -117,14 +116,14 @@ class _State extends State<CameraAndroidHome> with WidgetsBindingObserver {
   @override
   void didChangeAppLifecycleState(AppLifecycleState state) {
     // App state changed before we got the chance to initialize.
-    if (controller == null || !controller.value.isInitialized) {
+    if (controller == null || !controller!.value.isInitialized) {
       return;
     }
     if (state == AppLifecycleState.inactive) {
       controller?.dispose();
     } else if (state == AppLifecycleState.resumed) {
       if (controller != null) {
-        onNewCameraSelected(controller.description);
+        onNewCameraSelected(controller!.description);
       }
     }
   }
@@ -136,21 +135,21 @@ class _State extends State<CameraAndroidHome> with WidgetsBindingObserver {
     //     .showSnackBar(SnackBar(content: Text(message)));
   }
 
-  void onNewCameraSelected(CameraDescription cameraDescription) async {
+  void onNewCameraSelected(CameraDescription? cameraDescription) async {
     if (controller != null) {
-      await controller.dispose();
+      await controller!.dispose();
     }
-    controller = CameraController(cameraDescription, ResolutionPreset.medium,
+    controller = CameraController(cameraDescription!, ResolutionPreset.medium,
         enableAudio: false);
     // If the controller is updated then update the UI.
-    controller.addListener(() {
+    controller!.addListener(() {
       if (mounted) setState(() {});
-      if (controller.value.hasError) {
-        showInSnackBar('Camera error ${controller.value.errorDescription}');
+      if (controller!.value.hasError) {
+        showInSnackBar('Camera error ${controller!.value.errorDescription}');
       }
     });
     try {
-      controller.initialize().then((_) {
+      controller!.initialize().then((_) {
         if (!mounted) {
           return;
         }
@@ -166,7 +165,7 @@ class _State extends State<CameraAndroidHome> with WidgetsBindingObserver {
   }
 
   void onTakePictureButtonPressed() {
-    takePicture().then((String filePath) {
+    takePicture().then((String? filePath) {
       if (mounted) {
         setState(() {
           imagePath = filePath;
@@ -183,11 +182,11 @@ class _State extends State<CameraAndroidHome> with WidgetsBindingObserver {
 
     try {
       if (controller != null &&
-          controller.description.lensDirection == CameraLensDirection.front) {
+          controller!.description.lensDirection == CameraLensDirection.front) {
         return;
       }
       if (controller != null) {
-        await controller.setFlashMode(mode);
+        await controller!.setFlashMode(mode);
       }
     } on CameraException catch (e) {
       _showCameraException(e);
@@ -195,33 +194,33 @@ class _State extends State<CameraAndroidHome> with WidgetsBindingObserver {
     }
   }
 
-  Future<String> takePicture() async {
-    if (!controller.value.isInitialized) {
+  Future<String?> takePicture() async {
+    if (!controller!.value.isInitialized) {
       showInSnackBar('Error: select a camera first.');
       return null;
     }
     File fileImage;
-    if (controller.value.isTakingPicture) {
+    if (controller!.value.isTakingPicture) {
       // A capture is already pending, do nothing.
       return null;
     }
 
     setFlashMode(FlashMode.off);
     try {
-      XFile file = await controller.takePicture();
-      if (widget.previewPlayer) {
+      XFile file = await controller!.takePicture();
+      if (widget.previewPlayer!) {
         fileImage = await ImageProcessor.crop(
             file.path,
             MediaQuery.of(context).size.width,
             MediaQuery.of(context).size.height,
-            widget.previewPlayer);
+            widget.previewPlayer!);
       } else {
         fileImage = File(file.path);
       }
       List<dynamic> result = [];
       result.add(fileImage);
       bool isCurrentFront =
-          controller.description.lensDirection == CameraLensDirection.front
+          controller!.description.lensDirection == CameraLensDirection.front
               ? true
               : false;
       result.add(isCurrentFront);
@@ -232,35 +231,29 @@ class _State extends State<CameraAndroidHome> with WidgetsBindingObserver {
         //   isScreenshot = true;
         // });
         await Future.delayed(Duration(seconds: 1));
-        String path = await NativeScreenshot.takeScreenshot();
+        String? path = await NativeScreenshot.takeScreenshot();
         if (path != null) {
           fileImage = await ImageProcessor.crop(
               path,
               MediaQuery.of(context).size.width,
               MediaQuery.of(context).size.height,
-              widget.previewPlayer);
+              widget.previewPlayer!);
           // setState(() {
           //   isScreenshot = false;
           // });
           List<dynamic> result = [];
           result.add(fileImage);
           bool isCurrentFront =
-              controller.description.lensDirection == CameraLensDirection.front
+              controller!.description.lensDirection == CameraLensDirection.front
                   ? true
                   : false;
           result.add(isCurrentFront);
           CustomNavigator().pop(context, object: result);
         } else {
-          // setState(() {
-          //   isScreenshot = false;
-          // });
           return null;
         }
       } catch (e) {
-        // setState(() {
-        //   isScreenshot = false;
-        // });
-        _showCameraException(e);
+        // _showCameraException(e);
         return null;
       }
     }
@@ -268,15 +261,15 @@ class _State extends State<CameraAndroidHome> with WidgetsBindingObserver {
   }
 
   void _showCameraException(CameraException e) {
-    logError(e.code, e.description);
+    logError(e.code, e.description!);
     showInSnackBar('Error: ${e.code}\n${e.description}');
   }
 
   Widget _cameraPreviewWidgetIDCard() {
-    if (controller == null || !controller.value.isInitialized) {
+    if (controller == null || !controller!.value.isInitialized) {
       return Container();
     } else {
-      if (widget.previewPlayer) {
+      if (widget.previewPlayer!) {
         return Container(
           height: MediaQuery.of(context).size.height,
           child: Stack(
@@ -287,15 +280,15 @@ class _State extends State<CameraAndroidHome> with WidgetsBindingObserver {
                 foregroundPainter: Paint(),
                 size: Size.fromHeight(MediaQuery.of(context).size.height),
                 child: CameraPreview(
-                  controller,
+                  controller!,
                 ),
               ),
-              ClipPath(clipper: Clip(), child: CameraPreview(controller))
+              ClipPath(clipper: Clip(), child: CameraPreview(controller!))
             ],
           ),
         );
       }
-      return CameraPreview(controller);
+      return CameraPreview(controller!);
     }
   }
 
@@ -337,17 +330,17 @@ class _State extends State<CameraAndroidHome> with WidgetsBindingObserver {
               height: 300,
               decoration: BoxDecoration(
                   image: DecorationImage(
-                      image: AssetImage(widget.frame), fit: BoxFit.fill)),
+                      image: AssetImage(widget.frame!), fit: BoxFit.fill)),
               // child: Image.asset(Assets.imgFrameIdCard),
             ),
           if (widget.warning != null)
             Text(
-              widget.warning,
+              widget.warning!,
               style: TextStyle(
                   color: Colors.white, fontWeight: FontWeight.w600),
             ),
           Expanded(child: Container()),
-          (widget.previewPlayer)
+          (widget.previewPlayer!)
               ? Container(
             width: MediaQuery.of(context).size.width,
             padding: EdgeInsets.all(
@@ -377,7 +370,7 @@ class _State extends State<CameraAndroidHome> with WidgetsBindingObserver {
                   child: MaterialButton(
                     child: widget.iconCamera != null
                         ? Image.asset(
-                      widget.iconCamera,
+                      widget.iconCamera!,
                     )
                         : Container(
                       padding: EdgeInsets.all(4.0),
@@ -401,8 +394,8 @@ class _State extends State<CameraAndroidHome> with WidgetsBindingObserver {
                       ),
                     ),
                     onPressed: controller != null &&
-                        controller.value.isInitialized &&
-                        !controller.value.isRecordingVideo
+                        controller!.value.isInitialized &&
+                        !controller!.value.isRecordingVideo
                         ? onTakePictureButtonPressed
                         : null,
                   ),
@@ -430,8 +423,8 @@ class _State extends State<CameraAndroidHome> with WidgetsBindingObserver {
                 color: Colors.white,
               ),
               onPressed: controller != null &&
-                      controller.value.isInitialized &&
-                      !controller.value.isRecordingVideo
+                      controller!.value.isInitialized &&
+                      !controller!.value.isRecordingVideo
                   ? onTakePictureButtonPressed
                   : null,
             ),
@@ -513,13 +506,13 @@ class ImageProcessor {
       final height = properties.height;
       final width = properties.width;
       if (isPreviewPlayer) {
-        final top = height - (height * 0.8).toInt();
+        final top = height! - (height * 0.8).toInt();
         if (Platform.isIOS) {
           File croppedFile = await FlutterNativeImage.cropImage(imagePath, 0,
-              (top * 1.2).round(), width, (height * 0.39).round());
+              (top * 1.2).round(), width!, (height! * 0.39).round());
           return croppedFile;
         } else {
-          if (height < width) {
+          if (height! < width!) {
             File croppedFile = await FlutterNativeImage.cropImage(imagePath,
                 (top * 1.2).round(), 0, (width * 0.43).round(), height);
             return croppedFile;
@@ -531,14 +524,14 @@ class ImageProcessor {
           }
         }
       } else {
-        final top = height - (height * 0.9).toInt();
+        final top = height! - (height * 0.9).toInt();
         if (Platform.isIOS) {
           File croppedFile = await FlutterNativeImage.cropImage(imagePath, 0,
-              (top * 1.2).round(), width, (height * 0.8).round());
+              (top * 1.2).round(), width!, (height * 0.8).round());
           return croppedFile;
         }else{
           File croppedFile = await FlutterNativeImage.cropImage(
-              imagePath, 0, (top * 1.5).round(), (width * 0.43).round(),height);
+              imagePath, 0, (top * 1.5).round(), (width! * 0.43).round(),height!);
           return croppedFile;
         }
       }
@@ -552,14 +545,14 @@ class ImageProcessor {
       final height = properties.height;
       final width = properties.width;
       if(isPreviewPlayer){
-        final top = height - (height * 0.8).toInt();
-        File croppedFile = await FlutterNativeImage.cropImage(imagePath, (width * 0.1).round(), (top * 3.3).round(), (width * 2.4).round(), (height * 0.8).round());
+        final top = height! - (height * 0.8).toInt();
+        File croppedFile = await FlutterNativeImage.cropImage(imagePath, (width! * 0.1).round(), (top * 3.3).round(), (width * 2.4).round(), (height * 0.8).round());
         return croppedFile;
       }else{
-        final top = height - (height * 0.6).toInt();
+        final top = height! - (height * 0.6).toInt();
         File croppedFile = await FlutterNativeImage.cropImage(
             imagePath,
-            (width * 0.1).round(),
+            (width! * 0.1).round(),
             top,
             (width * 2.5).round(),
             (height*2).round());

@@ -53,7 +53,7 @@ class ProgressDialog {
 }
 
 class CustomDialog extends StatelessWidget {
-  final Widget screen;
+  final Widget? screen;
   final bool bottom;
   final bool cancelable;
 
@@ -97,7 +97,7 @@ class CustomDialog extends StatelessWidget {
 }
 
 class CustomPopupDialog extends StatelessWidget {
-  final Widget child;
+  final Widget? child;
   final bool isExpanded;
 
   CustomPopupDialog({@required this.child, this.isExpanded = false});
@@ -129,8 +129,8 @@ hideKeyboard(BuildContext context) {
 }
 
 class CustomKeyboardForm extends StatelessWidget {
-  final Widget body;
-  final Color backgroundColor;
+  final Widget? body;
+  final Color? backgroundColor;
 
   CustomKeyboardForm(
       {@required this.body, this.backgroundColor})
@@ -156,13 +156,13 @@ class CustomKeyboardForm extends StatelessWidget {
 }
 
 class CustomAlertDialog extends StatelessWidget {
-  final Color color;
-  final String icon;
-  final String title;
-  final Widget contentWidget;
-  final String content;
-  final List<CustomOptionDialog> options;
-  final bool dismissible;
+  final Color? color;
+  final String? icon;
+  final String? title;
+  final Widget? contentWidget;
+  final String? content;
+  final List<CustomOptionDialog>? options;
+  final bool? dismissible;
 
   CustomAlertDialog(
       {this.color,
@@ -173,7 +173,7 @@ class CustomAlertDialog extends StatelessWidget {
       this.options,
       this.dismissible = true});
 
-  Widget _buildButton(String text, Color color, Function onTap) {
+  Widget _buildButton(String text, Color color, Function()? onTap) {
     return InkWell(
       child: Container(
         height: 40.0,
@@ -198,7 +198,7 @@ class CustomAlertDialog extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.black.withOpacity(0.3),
       body: InkWell(
-        onTap: dismissible ? () => CustomNavigator().pop(context) : null,
+        onTap: dismissible! ? () => CustomNavigator().pop(context) : null,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
@@ -234,7 +234,7 @@ class CustomAlertDialog extends StatelessWidget {
                               child: Center(
                                   child: icon != null
                                       ? ImageIcon(
-                                          AssetImage(icon),
+                                          AssetImage(icon!),
                                           color: Colors.white,
                                           size: 20,
                                         )
@@ -249,7 +249,7 @@ class CustomAlertDialog extends StatelessWidget {
                             ),
                             Expanded(
                               child: Text(
-                                title ?? Common.stringNotification,
+                                title ?? Common.stringNotification!,
                                 textAlign: TextAlign.left,
                                 softWrap: true,
                                 style: TextStyle(
@@ -305,11 +305,11 @@ class CustomAlertDialog extends StatelessWidget {
                           children: options == null
                               ? [
                                   _buildButton(
-                                      Common.stringConfirm,
+                                      Common.stringConfirm!,
                                       color ?? Colors.blue,
                                       () => CustomNavigator().pop(context))
                                 ]
-                              : options
+                              : options!
                                   .map((e) => Row(
                                         children: <Widget>[
                                           Container(
@@ -321,7 +321,7 @@ class CustomAlertDialog extends StatelessWidget {
                                                   ? Colors.blue
                                                   : (e.color ??
                                                       HexColor("6D6D6D")),
-                                              e.onTap)
+                                              e.onTap as Function()?)
                                         ],
                                       ))
                                   .toList(),
@@ -342,8 +342,8 @@ class CustomAlertDialog extends StatelessWidget {
 class CustomOptionDialog {
   final bool isMain;
   final String text;
-  final Color color;
-  final Function onTap;
+  final Color? color;
+  final Function? onTap;
 
   CustomOptionDialog(this.text, {this.isMain = true, this.color, this.onTap});
 }

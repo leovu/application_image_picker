@@ -5,17 +5,17 @@ author:
 homepage:
 
 environment:
-  sdk: ">=2.7.0 <3.0.0"
+  sdk: ">=2.19.6 <3.0.0"
   flutter: ">=1.20.0 <2.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-  image_picker: ^0.7.2
-  permission_handler: ^10.0.0
-  camera: ^0.8.1+7
+  image_picker: ^0.8.7+2
+  permission_handler: ^10.2.0
+  camera: ^0.10.4
   flutter_native_image: ^0.0.6+1
-  path_provider: ^2.0.2
+  path_provider: ^2.0.14
   native_screenshot: ^1.0.0
   android_gallery_picker:
     git:

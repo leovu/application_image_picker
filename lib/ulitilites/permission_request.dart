@@ -10,14 +10,14 @@ class PermissionRequest {
 
     try {
       if (type == PermissionRequestType.CAMERA) {
-        result = await channel.invokeMethod<int>('camera');
+        result = (await channel.invokeMethod<int>('camera'))!;
       } else if (type == PermissionRequestType.LOCATION) {
-        result = await channel.invokeMethod<int>('location');
+        result = (await channel.invokeMethod<int>('location'))!;
       } else if (type == PermissionRequestType.RECORD_AUDIO) {
-        result = await channel.invokeMethod<int>('record_audio');
+        result = (await channel.invokeMethod<int>('record_audio'))!;
       } else if (type == PermissionRequestType.STORAGE) {
         if (Platform.isAndroid) {
-          result = await channel.invokeMethod<int>('storage');
+          result = (await channel.invokeMethod<int>('storage'))!;
         } else
           result = 1;
       }
@@ -35,13 +35,13 @@ class PermissionRequest {
     int result = 0;
     try {
       if (type == PermissionRequestType.CAMERA) {
-        result = await channel.invokeMethod<int>('camera');
+        result = (await channel.invokeMethod<int>('camera'))!;
       } else if (type == PermissionRequestType.LOCATION) {
-        result = await channel.invokeMethod<int>('location');
+        result = (await channel.invokeMethod<int>('location'))!;
       } else if (type == PermissionRequestType.RECORD_AUDIO) {
-        result = await channel.invokeMethod<int>('record_audio');
+        result = (await channel.invokeMethod<int>('record_audio'))!;
       } else if (type == PermissionRequestType.STORAGE) {
-        result = await channel.invokeMethod<int>('storage');
+        result = (await channel.invokeMethod<int>('storage'))!;
       }
     } catch (e) {
       print(e);

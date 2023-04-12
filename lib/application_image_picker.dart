@@ -8,18 +8,18 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 class RetroImagePicker {
-  static Future<File> pickImage(BuildContext context,
-      {@required RetroImageSource source,
-      double maxWidth,
-      double maxHeight,
-      int imageQuality,
-      String strConfirm,
-      String strNotification,
-      String strAlertCamera,
-      String strSelectGallery,
-      String strTakePhoto,
-      String appBarColor,
-      String titleAppBar}) async {
+  static Future<File?> pickImage(BuildContext context,
+      {@required RetroImageSource? source,
+      double? maxWidth,
+      double? maxHeight,
+      int? imageQuality,
+      String? strConfirm,
+      String? strNotification,
+      String? strAlertCamera,
+      String? strSelectGallery,
+      String? strTakePhoto,
+      String? appBarColor,
+      String? titleAppBar}) async {
     Common().init(
       strAlertCamera: strAlertCamera,
       strConfirm: strConfirm,
@@ -38,19 +38,19 @@ class RetroImagePicker {
         titleAppBar: titleAppBar,isPreviewPlayer: true);
   }
 
-  static Future<List<File>> pickImages(BuildContext context,
-      {@required RetroImageSource source,
-      double maxWidth,
-      double maxHeight,
-      int imageQuality,
-      String strConfirm,
-      String strNotification,
-      String strAlertCamera,
-      String strSelectGallery,
-      String strTakePhoto,
-      String appBarColor,
-      String titleAppBar,
-      int limitMultiPick}) async {
+  static Future<List<File>?> pickImages(BuildContext context,
+      {@required RetroImageSource? source,
+      double? maxWidth,
+      double? maxHeight,
+      int? imageQuality,
+      String? strConfirm,
+      String? strNotification,
+      String? strAlertCamera,
+      String? strSelectGallery,
+      String? strTakePhoto,
+      String? appBarColor,
+      String? titleAppBar,
+      int? limitMultiPick}) async {
     Common().init(
       strAlertCamera: strAlertCamera,
       strConfirm: strConfirm,
@@ -58,14 +58,14 @@ class RetroImagePicker {
       strSelectGallery: strSelectGallery,
       strTakePhoto: strTakePhoto,
     );
-    Future<List<File>> results = ApplicationImagePicker.pickImages(context,
+    Future<List<File>?> results = ApplicationImagePicker.pickImages(context,
         imageQuality: imageQuality,
         maxHeight: maxHeight,
         maxWidth: maxWidth,
         appBarColor: appBarColor,
         titleAppBar: titleAppBar,
         limitMultiPick: limitMultiPick);
-    List<File> result = await results;
+    List<File>? result = await results;
     if (result != null) {
       for (int i = 0; i <= result.length - 1; i++) {
         result[i] = await ApplicationImagePicker.compressImage(result[i]);
@@ -75,14 +75,14 @@ class RetroImagePicker {
     return result;
   }
 
-  static Future<File> openPictureSelection(BuildContext context,
-      {String strConfirm,
-      String strNotification,
-      String strAlertCamera,
-      String strSelectGallery,
-      String strTakePhoto,
-      String appBarColor,
-      String titleAppBar}) async {
+  static Future<File?> openPictureSelection(BuildContext context,
+      {String? strConfirm,
+      String? strNotification,
+      String? strAlertCamera,
+      String? strSelectGallery,
+      String? strTakePhoto,
+      String? appBarColor,
+      String? titleAppBar}) async {
     Common().init(
       strAlertCamera: strAlertCamera,
       strConfirm: strConfirm,
@@ -90,7 +90,7 @@ class RetroImagePicker {
       strSelectGallery: strSelectGallery,
       strTakePhoto: strTakePhoto,
     );
-    String option = await showModalBottomSheet<String>(
+    String? option = await showModalBottomSheet<String>(
         context: context,
         elevation: 1,
         backgroundColor: Colors.transparent,
@@ -107,14 +107,14 @@ class RetroImagePicker {
     return null;
   }
 
-  static Future<List<File>> openPicturesSelection(BuildContext context,
-      {String strConfirm,
-      String strNotification,
-      String strAlertCamera,
-      String strSelectGallery,
-      String strTakePhoto,
-      String appBarColor,
-      String titleAppBar}) async {
+  static Future<List<File>?> openPicturesSelection(BuildContext context,
+      {String? strConfirm,
+      String? strNotification,
+      String? strAlertCamera,
+      String? strSelectGallery,
+      String? strTakePhoto,
+      String? appBarColor,
+      String? titleAppBar}) async {
     Common().init(
       strAlertCamera: strAlertCamera,
       strConfirm: strConfirm,
@@ -122,7 +122,7 @@ class RetroImagePicker {
       strSelectGallery: strSelectGallery,
       strTakePhoto: strTakePhoto,
     );
-    String option = await showModalBottomSheet<String>(
+    String? option = await showModalBottomSheet<String>(
         context: context,
         elevation: 1,
         backgroundColor: Colors.transparent,
@@ -243,7 +243,7 @@ class RetroImagePicker {
                                 Container(
                                   margin: EdgeInsets.only(left: 18),
                                   child: Text(
-                                    Common.takePhoto,
+                                    Common.takePhoto!,
                                     style: TextStyle(
                                         color: HexColor("#333333"),
                                         fontSize: 15,
@@ -260,8 +260,8 @@ class RetroImagePicker {
         ]));
   }
 
-  static Future<File> _showPopupImage(BuildContext context, int imageType,
-      {String appBarColor, String titleAppBar}) async {
+  static Future<File?> _showPopupImage(BuildContext context, int imageType,
+      {String? appBarColor, String? titleAppBar}) async {
     if (imageType == 1) {
       var image = await ApplicationImagePicker.pickImage(context,
           source: ImageSource.camera,
@@ -288,9 +288,9 @@ class RetroImagePicker {
     return null;
   }
 
-  static Future<List<File>> _showPopupImages(
+  static Future<List<File>?> _showPopupImages(
       BuildContext context, int imageType,
-      {String appBarColor, String titleAppBar}) async {
+      {String? appBarColor, String? titleAppBar}) async {
     if (imageType == 1) {
       var image = await ApplicationImagePicker.pickImage(context,
           source: ImageSource.camera,

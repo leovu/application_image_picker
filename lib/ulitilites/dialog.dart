@@ -4,12 +4,11 @@ import 'package:application_image_picker/ulitilites/progress_dialog.dart';
 import 'package:flutter/material.dart';
 
 
-openAlertDialog(BuildContext context, String title, String content,
-    [Function func]) async {
+openAlertDialog(BuildContext? context, String title, String content,
+    [Function? func]) async {
+  BuildContext? cxt = context ?? NavigationService.singleton.navigatorKey.currentContext;
   return await showDialog(
-      context: (context != null)
-          ? context
-          : NavigationService.singleton.navigatorKey.currentContext,
+      context: cxt!,
       barrierDismissible: false,
       builder: (context) {
         return AlertDialog(
@@ -74,7 +73,7 @@ openAlertDialog(BuildContext context, String title, String content,
                               padding: EdgeInsets.symmetric(
                                   vertical: 10, horizontal: 40),
                               child: Text(
-                                Common.stringConfirm,
+                                Common.stringConfirm!,
                                 style: TextStyle(
                                     color: Colors.white,
                                     fontSize: 14,
@@ -104,42 +103,42 @@ class NavigationService {
 
   GlobalKey<NavigatorState> navigatorKey = new GlobalKey<NavigatorState>();
 
-  bool shouldOpenExistProduct;
+  bool? shouldOpenExistProduct;
 
-  Future<dynamic> pushNamed(String routeName, {Object argument}) {
-    return navigatorKey.currentState.pushNamed(routeName, arguments: argument);
+  Future<dynamic> pushNamed(String routeName, {Object? argument}) {
+    return navigatorKey.currentState!.pushNamed(routeName, arguments: argument);
   }
 
   Future<dynamic> pushNamedAndRemoveUntil(
       String routeName, bool Function(Route<dynamic>) predicate,
-      {Object argument}) {
-    return navigatorKey.currentState
+      {Object? argument}) {
+    return navigatorKey.currentState!
         .pushNamedAndRemoveUntil(routeName, predicate, arguments: argument);
   }
 
   Future<dynamic> pushAndRemoveUntil<T extends Object>(
       Route<T> newRoute, bool Function(Route<dynamic>) predicate) {
-    return navigatorKey.currentState.pushAndRemoveUntil(newRoute, predicate);
+    return navigatorKey.currentState!.pushAndRemoveUntil(newRoute, predicate);
   }
 
   Future<dynamic> push<T extends Object>(Route<T> route) {
-    return navigatorKey.currentState.push(route);
+    return navigatorKey.currentState!.push(route);
   }
 
   Future<dynamic> pushReplacement<T extends Object>(Route<T> route) {
-    return navigatorKey.currentState.pushReplacement(route);
+    return navigatorKey.currentState!.pushReplacement(route);
   }
 
   Future<dynamic> pushReplacementNamed(String routeName) {
-    return navigatorKey.currentState.pushReplacementNamed(routeName);
+    return navigatorKey.currentState!.pushReplacementNamed(routeName);
   }
 
-  void pop<T extends Object>([T result]) {
-    return navigatorKey.currentState.pop(result);
+  void pop<T extends Object>([T? result]) {
+    return navigatorKey.currentState!.pop(result);
   }
 
   void popUntil<T extends Object>(bool Function(Route<dynamic>) predicate) {
-    return navigatorKey.currentState.popUntil(predicate);
+    return navigatorKey.currentState!.popUntil(predicate);
   }
 }
 
@@ -158,18 +157,18 @@ extension NavigatorStateExtension on NavigatorState {
 }
 
 class CustomNavigator {
-  static ProgressDialog _pr;
+  static ProgressDialog? _pr;
   showProgressDialog(BuildContext context) {
     if (_pr == null) {
       _pr = ProgressDialog(context);
-      _pr.show();
+      _pr!.show();
     }
   }
 
   hideProgressDialog() {
-    if (_pr != null && _pr.isShowing()) {
-      _pr.hide();
-      _pr = null;
+    if (_pr != null && _pr!.isShowing()) {
+      _pr!.hide();
+      _pr = null!;
     }
   }
 
@@ -250,14 +249,14 @@ class CustomNavigator {
 }
 
 class CustomRoute extends PageRouteBuilder {
-  final Widget page;
+  final Widget? page;
   final bool opaque;
   final bool isHero;
   CustomRoute({this.page, this.opaque = true, this.isHero = false})
       : super(
             pageBuilder: (BuildContext context, Animation<double> animation,
                     Animation<double> secondaryAnimation) =>
-                page,
+                page!,
             transitionsBuilder: (BuildContext context,
                     Animation<double> animation,
                     Animation<double> secondaryAnimation,

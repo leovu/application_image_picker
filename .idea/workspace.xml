@@ -8,7 +8,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8869401b-e120-4d29-8869-f67246b2810a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/example/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/aplication_permission_handler.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/aplication_permission_handler.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/application_image_picker.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/application_image_picker.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/camera/custom_camera.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/camera/custom_camera.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ulitilites/constant.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ulitilites/constant.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ulitilites/custom_alert_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ulitilites/custom_alert_dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ulitilites/dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ulitilites/dialog.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ulitilites/image_picker.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ulitilites/image_picker.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ulitilites/permission_request.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ulitilites/permission_request.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/ulitilites/progress_dialog.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/ulitilites/progress_dialog.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
@@ -57,7 +68,6 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
-    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="io.flutter.reload.alreadyRun" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />

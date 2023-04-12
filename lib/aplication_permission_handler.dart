@@ -12,13 +12,13 @@ class RetroPermissionHandler {
     if (Platform.isAndroid) {
       if (await Permission.location.isPermanentlyDenied) {
         await openAppSettings();
-        PermissionStatus permission = await _checkPermission(type);
+        PermissionStatus? permission = await _checkPermission(type);
         if (permission == PermissionStatus.granted) {
           return true;
         }
         return false;
       } else {
-        PermissionStatus permission = await _checkPermission(type);
+        PermissionStatus? permission = await _checkPermission(type);
         if (permission == PermissionStatus.granted) {
           return true;
         } else {
@@ -26,7 +26,7 @@ class RetroPermissionHandler {
         }
       }
     } else {
-      PermissionStatus permission = await _checkPermission(type);
+      PermissionStatus? permission = await _checkPermission(type);
       if (permission == PermissionStatus.granted) {
         return true;
       } else if (permission == PermissionStatus.restricted ||
@@ -37,11 +37,11 @@ class RetroPermissionHandler {
         }
         return false;
       } else {
-        PermissionStatus permission = await _checkPermission(type);
+        PermissionStatus? permission = await _checkPermission(type);
         if (permission == PermissionStatus.granted) {
           return true;
         } else {
-          PermissionStatus permission = await _checkPermission(type);
+          PermissionStatus? permission = await _checkPermission(type);
           if (permission == PermissionStatus.granted) {
             return true;
           }
@@ -95,7 +95,7 @@ class RetroPermissionHandler {
     }
   }
 
-  static Future<PermissionStatus> _checkPermission(
+  static Future<PermissionStatus?> _checkPermission(
       PermissionRequestType type) async {
     switch (type) {
       case PermissionRequestType.CAMERA:
@@ -132,14 +132,14 @@ class RetroPermissionHandler {
 
     try {
       if (type == PermissionRequestType.CAMERA) {
-        result = await channel.invokeMethod<int>('camera');
+        result = (await channel.invokeMethod<int>('camera'))!;
       } else if (type == PermissionRequestType.LOCATION) {
-        result = await channel.invokeMethod<int>('location');
+        result = (await channel.invokeMethod<int>('location'))!;
       } else if (type == PermissionRequestType.RECORD_AUDIO) {
-        result = await channel.invokeMethod<int>('record_audio');
+        result = (await channel.invokeMethod<int>('record_audio'))!;
       } else if (type == PermissionRequestType.STORAGE) {
         if (Platform.isAndroid) {
-          result = await channel.invokeMethod<int>('storage');
+          result = (await channel.invokeMethod<int>('storage'))!;
         } else
           result = 1;
       }
